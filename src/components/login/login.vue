@@ -1,0 +1,219 @@
+<template>
+  <body>
+  <div class="reg_wrapper">
+    <div class="reg">
+      <div class="reg_data">
+
+
+
+        <h1 class="reg_data_title">Авторизация</h1>
+
+        <form @submit.prevent="NewLocalStorage" id="login" method="POST">
+          <!-- Ответ ajax -->
+          <span id="loginmessage"></span>
+          <!-- Ответ ajax -->
+          <p>E-mail или никнейм</p>
+
+          <input type="text" name="nickname" />
+
+          <p class="log-pass">Пароль</p>
+
+          <input type="password" name="password" value="" /><br />
+
+          <input type="hidden" name="do_login" />
+
+          <button type="submit" name="do_login" >Войти</button>
+
+        </form>
+
+        <button @click="OldLocalStorage">Кнопка</button>
+      </div>
+    </div>
+  </div>
+  </body>
+</template>
+
+<script>
+// import navbar from "@/components/navbar/navbar";
+export default {
+  name: "Login-App",
+
+
+  data() {
+    return{
+      tmp: 12
+    }
+  },
+  methods: {
+    NewLocalStorage(){
+      localStorage.setItem('test', 8);
+
+    },
+    OldLocalStorage(){
+      alert( localStorage.getItem('test'));
+    }
+  }
+
+}
+
+
+</script>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400&display=swap');
+:root {
+  /*========== Colors ==========*/
+  /* light color */
+  --primary-color: #8b65fe;
+  --primary-color-hover: #6c49d6;
+  --body-color: #f6f5f7;
+  --content-color: #fff;
+  --content-color-hover: rgb(240, 240, 240);
+  --title-color: #141414;
+  --border-light: #e8e8e8;
+  --text-color-gray: #8d95a4;
+  --gray-color: #eff7fc;
+
+  --radius: 5px;
+  --radius-8: 8px;
+
+  /* shadow */
+  --shadow-big-content: 0 10px 40px -20px rgb(147 156 176 / 30%);
+  --shadow-small-content: 0 0 12px rgb(0, 0, 0, 0.1);
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Montserrat', -apple-system, Fira Sans, BlinkMacSystemFont, Arial, sans-serif;
+  --text-font: -apple-system, Fira Sans, BlinkMacSystemFont, Arial, sans-serif;
+}
+
+/*========== BASE ==========*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  overflow-x: hidden;
+  font-family: var(--body-font) !important;
+  background-color: var(--body-color);
+  color: var(--title-color);
+  font-weight: 500;
+  line-height: 1.6;
+}
+body.theme-light {
+  background-color: var(--light-body-color);
+}
+h1,
+h2,
+h3,
+ul,
+p {
+  margin: 0;
+  list-style: none;
+}
+p {
+  line-height: 28px;
+  font-size: 17px;
+  font-family: -apple-system, BlinkMacSystemFont, var(--body-font), Segoe UI,
+  Roboto, Helvetica, Ubuntu, Cantarell, Arial, sans-serif, Apple Color Emoji,
+  Segoe UI Emoji, Segoe UI Symbol;
+}
+h1,
+h2,
+h3 {
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  outline: none;
+  transition: 0.2s ease;
+}
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+.reg_wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  background-size: cover;
+}
+.reg {
+  border-radius: 50px;
+  box-shadow: var(--shadow-big-content);
+  background: var(--content-color);
+  display: flex;
+  margin: 0 auto;
+  width: 400px;
+  position: relative;
+  overflow: hidden;
+}
+.reg_data {
+  padding: 80px 50px 60px 50px;
+  border-radius: 30px;
+  height: 100%;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  background: var(--content-color);
+}
+.reg_data_title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.reg_data form p {
+  text-align: left;
+  color: #5e5d5d;
+  margin-top: 6px;
+}
+.reg_data form input {
+  width: 100%;
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 8px;
+  font-weight: 400;
+  border: 1px solid #ccc;
+}
+.reg_data form input:focus {
+  outline: #8b65fe;
+  border: 1px solid var(--primary-color);
+}
+.reg_data form button {
+  border-radius: 15px;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  cursor: pointer;
+  background: #8B65FEFF;
+  color: #fff;
+  font-weight: 600;
+  font-size: 17px;
+  border: none;
+  padding: 15px;
+  transition: .2s ease;
+}
+.reg_data form button:hover {
+  background: #8b65fe;
+}
+</style>
