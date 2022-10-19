@@ -1,25 +1,31 @@
-import login from "@/components/login/login";
-import registration from "@/components/registration/registration";
+
 import {createRouter, createWebHistory} from "vue-router";
-import home from "@/components/home/home";
+
 const routes = [
     {
         path: '/',
-        component: home
+        component: () => import('@/components/home/home')
     },
     {
         path: '/login',
         name: 'login',
-        component: login
+        component: () => import('@/components/login/login')
     },
     {
         path: '/registration',
         name: 'registration',
-        component: registration
+        component: () => import('@/components/registration/registration')
     },
     {
-
+        path: '/account',
+        name: 'account',
+        component: () => import('@/components/account/account'),
+        // beforeEnter: (to, from, next) => {
+        //     if (localStorage.getItem('isAuth')) next({ name: 'account' })
+        //     else next()
+        // }
     }
+
 ]
 
 const router = createRouter({

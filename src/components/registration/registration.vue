@@ -5,6 +5,10 @@
       <div class="reg_data">
 
 
+        <div class="reg_change">
+          <router-link :to="{name: 'login'}" class="reg_change_button">Вход</router-link>
+          <router-link :to="{name: 'registration'}" class="reg_change_button">Регистрация</router-link>
+        </div>
 
         <h1 class="reg_data_title">Регистрация</h1>
         <form id="login" method="POST">
@@ -134,6 +138,7 @@ img {
   align-items: center;
   min-height: 100vh;
   height: 100%;
+  /*background: url(https://img1.akspic.ru/attachments/crops/1/7/1/2/0/102171/102171-peyzash-nebo-vodohranilishhe-priroda-fjord-1920x1080.jpg);*/
   background-size: cover;
 }
 .reg {
@@ -218,7 +223,7 @@ img {
   text-align: center;
   margin-top: 20px;
   cursor: pointer;
-  background: #8b65fe;
+  background: var(--primary-color);
   color: #fff;
   font-weight: 600;
   font-size: 17px;
@@ -227,6 +232,6 @@ img {
   transition: .2s ease;
 }
 .reg_data form button:hover {
-  background: #8b65fe;
+  background: var(--primary-color-hover);
 }
 </style>

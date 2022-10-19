@@ -4,29 +4,33 @@
     <div class="reg">
       <div class="reg_data">
 
+      <div class="reg_change">
+        <router-link :to="{name: 'login'}" class="reg_change_button">Вход</router-link>
+        <router-link :to="{name: 'registration'}" class="reg_change_button">Регистрация</router-link>
+      </div>
 
 
         <h1 class="reg_data_title">Авторизация</h1>
 
-        <form @submit.prevent="NewLocalStorage" id="login" method="POST">
+        <form @submit.prevent="signIn" id="login" method="POST">
           <!-- Ответ ajax -->
           <span id="loginmessage"></span>
           <!-- Ответ ajax -->
           <p>E-mail или никнейм</p>
 
-          <input type="text" name="nickname" />
+          <input type="text" name="nickname" v-model="username"/>
 
           <p class="log-pass">Пароль</p>
 
-          <input type="password" name="password" value="" /><br />
+          <input type="password" name="password" v-model="password"/><br />
 
           <input type="hidden" name="do_login" />
 
           <button type="submit" name="do_login" >Войти</button>
-
+{{ this.tmp }}
         </form>
 
-        <button @click="OldLocalStorage">Кнопка</button>
+
       </div>
     </div>
   </div>
@@ -34,23 +38,33 @@
 </template>
 
 <script>
-// import navbar from "@/components/navbar/navbar";
+
+import axios from "axios";
+
 export default {
   name: "Login-App",
-
-
   data() {
     return{
-      tmp: 12
+      username: "",
+      password: "",
+      tmpPass: "pass123@$Zx",
+      tmp: ""
     }
   },
   methods: {
-    NewLocalStorage(){
-      localStorage.setItem('test', 8);
+    async signIn(){
+      // const url = 'https://dev.milkhunters.ru/api/v1/signup'
 
-    },
-    OldLocalStorage(){
-      alert( localStorage.getItem('test'));
+      const response = await axios.post('https://dev.milkhunters.ru/api/v1/signin', {
+        "username": this.username,
+        "password": this.password
+      })
+
+      if (response.status === 200){
+        localStorage.setItem('isAuth', 'true')
+        localStorage.setItem('user', JSON.stringify(response.data))
+      }
+
     }
   }
 
@@ -156,6 +170,7 @@ img {
   align-items: center;
   min-height: 100vh;
   height: 100%;
+  /*background: url(https://img1.akspic.ru/attachments/crops/1/7/1/2/0/102171/102171-peyzash-nebo-vodohranilishhe-priroda-fjord-1920x1080.jpg);*/
   background-size: cover;
 }
 .reg {
@@ -168,6 +183,34 @@ img {
   position: relative;
   overflow: hidden;
 }
+.reg_change {
+  border: 2px solid rgb(215, 215, 215);
+  border-radius: 10px;
+  padding: 1px;
+  margin-bottom: 20px;
+  height: 40px;
+  display: flex;
+  width: 100%;
+}
+.reg_change_button {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  height: 100%;
+  text-align: center;
+  border-radius: 8px;
+  color: var(--title-color);
+  transition: .2s ease;
+}
+.reg_change_button:hover {
+  background: var(--content-color-hover);
+}
+.reg_change_button.active_change_button {
+  background: var(--content-color-hover);
+}
 .reg_data {
   padding: 80px 50px 60px 50px;
   border-radius: 30px;
@@ -176,6 +219,13 @@ img {
   text-align: center;
   width: 100%;
   background: var(--content-color);
+}
+.reg_data_name {
+  font-size: 17px;
+  position: absolute;
+  right: 40px;
+  font-family: 'Roboto Mono', monospace;;
+  top: 20px;
 }
 .reg_data_title {
   font-size: 24px;
@@ -205,7 +255,7 @@ img {
   text-align: center;
   margin-top: 20px;
   cursor: pointer;
-  background: #8B65FEFF;
+  background: var(--primary-color);
   color: #fff;
   font-weight: 600;
   font-size: 17px;
@@ -214,6 +264,6 @@ img {
   transition: .2s ease;
 }
 .reg_data form button:hover {
-  background: #8b65fe;
+  background: var(--primary-color-hover);
 }
 </style>
