@@ -1,10 +1,12 @@
 <template>
-
+<div class="userAccount">
+  Hello, User!
+</div>
 </template>
 
 <script>
 export default {
-  name: "account"
+  name: "AccountApp"
 }
 </script>
 
