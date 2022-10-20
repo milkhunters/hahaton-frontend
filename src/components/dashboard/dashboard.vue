@@ -24,7 +24,7 @@ export default {
   methods: {
     async LogOut(){
       const url = 'https://dev-hack.milkhunters.ru/api/v1'
-      await axios.get(url + "auth/logout")
+      await axios.get(url + "/auth/logout")
       await router.push({name: 'login'})
 
       // const url = 'https://dev-hack.milkhunters.ru/api/v1'
