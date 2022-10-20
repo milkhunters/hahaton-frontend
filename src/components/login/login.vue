@@ -46,9 +46,7 @@ export default {
   data() {
     return{
       username: "",
-      password: "",
-      tmpPass: "pass123@$Zx",
-      tmp: ""
+      password: ""
     }
   },
   methods: {
@@ -59,17 +57,16 @@ export default {
         "username": this.username,
         "password": this.password
       })
-
+      console.log(response)
       if (response.status === 200 && response.data.error === undefined){
         // localStorage.setItem('isAuth', 'true')
         // localStorage.setItem('user', JSON.stringify(response.data))
-
-        document.cookie = "user" + "=" + JSON.stringify(response.data);
+        // document.cookie = "user" + "=" + JSON.stringify(response.data);
 
         await router.push({name: 'dashboard'})
 
-      } else {
-        alert('Nikita')
+      } else if (response.data.error !== undefined) {
+        alert("Ошибка " + response.data.error.message)
       }
 
 
