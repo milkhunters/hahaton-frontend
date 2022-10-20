@@ -27,7 +27,7 @@
           <input type="hidden" name="do_login" />
 
           <button type="submit" name="do_login" >Войти</button>
-{{ this.tmp }}
+
         </form>
 
 
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-
+import router from "@/router/router";
 import axios from "axios";
 
 export default {
@@ -53,17 +53,25 @@ export default {
   },
   methods: {
     async signIn(){
-      // const url = 'https://dev.milkhunters.ru/api/v1/signup'
+       const url = 'https://dev-hack.milkhunters.ru/api/v1'
 
-      const response = await axios.post('https://dev.milkhunters.ru/api/v1/signin', {
+      const response = await axios.post(url + "/auth/signIn", {
         "username": this.username,
         "password": this.password
       })
 
-      if (response.status === 200){
-        localStorage.setItem('isAuth', 'true')
-        localStorage.setItem('user', JSON.stringify(response.data))
+      if (response.status === 200 && response.data.error === undefined){
+        // localStorage.setItem('isAuth', 'true')
+        // localStorage.setItem('user', JSON.stringify(response.data))
+
+        document.cookie = "user" + "=" + JSON.stringify(response.data);
+
+        await router.push({name: 'dashboard'})
+
+      } else {
+        alert('Nikita')
       }
+
 
     }
   }

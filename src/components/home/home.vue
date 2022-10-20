@@ -1,7 +1,7 @@
 <template>
 
 <div class="homeDiv">
-  <navbar-app></navbar-app>
+  <AuthRegButtons/>
 
 </div>
 
@@ -9,10 +9,11 @@
 
 <script>
 
-import NavbarApp from "@/components/navbar/authRegButtons";
+
+import AuthRegButtons from "@/components/navbar/authRegButtons";
 export default {
   name: "Home-App",
-  components: {NavbarApp}
+  components: {AuthRegButtons},
 
 }
 </script>

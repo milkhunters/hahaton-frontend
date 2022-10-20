@@ -4,7 +4,9 @@ import {createRouter, createWebHistory} from "vue-router";
 const routes = [
     {
         path: '/',
-        component: () => import('@/components/home/home')
+        name: 'home',
+        component: () => import('@/components/home/home'),
+        // redirect: { name: 'login' }
     },
     {
         path: '/login',
@@ -14,17 +16,20 @@ const routes = [
     {
         path: '/registration',
         name: 'registration',
-        component: () => import('@/components/registration/registration')
+        // component: () => import('@/components/registration/registration')
+        redirect: { name: 'login' }
     },
     {
         path: '/account',
         name: 'account',
-        component: () => import('@/components/account/account'),
-        // beforeEnter: (to, from, next) => {
-        //     if (localStorage.getItem('isAuth')) next({ name: 'account' })
-        //     else next()
-        // }
+        component: () => import('@/components/account/account')
+    },
+    {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: () => import('@/components/dashboard/dashboard')
     }
+
 
 ]
 
