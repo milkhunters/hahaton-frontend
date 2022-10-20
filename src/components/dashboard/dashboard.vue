@@ -45,11 +45,10 @@ export default {
     const response = await axios.get(url + "/user/current")
 
     this.name = response.data.username
-    // if (response.data.error === undefined) {
-    //   alert(response.data.username)
-    // } else {
-    //   await router.push({name: 'login'})
-    // }
+
+    if (response.data.error !== undefined) {
+      await router.push({name: 'login'})
+    }
 
   }
 // автоматически выполнять current запрос
