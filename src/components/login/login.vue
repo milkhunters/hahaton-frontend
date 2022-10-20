@@ -58,6 +58,7 @@ export default {
         "password": this.password
       })
       console.log(response)
+
       if (response.status === 200 && response.data.error === undefined){
         // localStorage.setItem('isAuth', 'true')
         // localStorage.setItem('user', JSON.stringify(response.data))
