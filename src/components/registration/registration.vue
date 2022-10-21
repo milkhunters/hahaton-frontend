@@ -4,11 +4,12 @@
     <div class="reg">
       <div class="reg_data">
         <div class="reg_change">
-          <a href="reg.html" class="reg_change_button active_change_button"
-          >Регистрация</a
-          >
-          <a href="#" class="reg_change_button">Авторизация</a>
+
+            <router-link :to="{name: 'login'}" class="reg_change_button">Вход</router-link>
+            <router-link :to="{name: 'registration'}" class="reg_change_button">Регистрация</router-link>
+
         </div>
+
         <h1 class="reg_data_title">Регистрация</h1>
         <form id="login" method="POST">
           <!-- Ответ ajax -->
@@ -93,7 +94,7 @@ export default {
   align-items: center;
   min-height: 100vh;
   height: 100%;
-  background: url(https://img1.akspic.ru/attachments/crops/1/7/1/2/0/102171/102171-peyzash-nebo-vodohranilishhe-priroda-fjord-1920x1080.jpg);
+  background-color: var(--light-body-color);
   background-size: cover;
 }
 .reg {
