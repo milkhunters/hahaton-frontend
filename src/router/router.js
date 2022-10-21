@@ -1,6 +1,5 @@
 
 import {createRouter, createWebHistory} from "vue-router";
-import axios from "axios";
 
 
 const routes = [
@@ -21,19 +20,7 @@ const routes = [
         // component: () => import('@/components/registration/registration')
         redirect: { name: 'login' }
     },
-    {
-        path: '/account',
-        name: 'account',
-        component: () => import('@/components/account/account')
-    },
-    {
-        path: '/dashboard',
-        name: 'dashboard',
-        component: () => import('@/components/dashboard/dashboard'),
-    }
-
-
-]
+  ]
 
 const router = createRouter({
     routes,
