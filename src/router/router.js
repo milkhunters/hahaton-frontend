@@ -3,15 +3,6 @@ import {createRouter, createWebHistory} from "vue-router";
 import axios from "axios";
 
 
-const url = 'https://dev-hack.milkhunters.ru/api/v1'
-
-const response = await axios.get(url + "/user/current")
-
-if (response.data.error !== undefined) {
-    await router.push({name: 'login'})
-}
-
-
 const routes = [
     {
         path: '/',
