@@ -14,6 +14,7 @@
 
         <form @submit.prevent="signIn" id="login" method="POST">
           <!-- Ответ ajax -->
+          {{ errorMessage }}
           <span id="loginmessage"></span>
           <!-- Ответ ajax -->
           <p>E-mail или никнейм</p>
@@ -37,6 +38,13 @@
   </body>
 </template>
 
+
+
+
+
+
+
+
 <script>
 import router from "@/router/router";
 import axios from "axios";
@@ -46,7 +54,8 @@ export default {
   data() {
     return{
       username: "",
-      password: ""
+      password: "",
+      errorMessage: ""
     }
   },
   methods: {
@@ -67,7 +76,9 @@ export default {
         await router.push({name: 'dashboard'})
 
       } else if (response.data.error !== undefined) {
-        alert("Ошибка " + response.data.error.message)
+
+          this.errorMessage = response.data.error.message
+
       }
 
 
@@ -80,6 +91,7 @@ export default {
 </script>
 
 <style scoped>
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400&display=swap');
 :root {
