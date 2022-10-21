@@ -3,35 +3,24 @@
   <div class="reg_wrapper">
     <div class="reg">
       <div class="reg_data">
-
-      <div class="reg_change">
-        <router-link :to="{name: 'login'}" class="reg_change_button">Вход</router-link>
-        <router-link :to="{name: 'registration'}" class="reg_change_button">Регистрация</router-link>
-      </div>
-
-
-        <h1 class="reg_data_title">Авторизация</h1>
-
-        <form @submit.prevent="signIn" id="login" method="POST">
+        <div class="reg_change">
+          <a href="reg.html" class="reg_change_button"
+          >Регистрация</a
+          >
+          <a href="#" class="reg_change_button active_change_button">Авторизация</a>
+        </div>
+        <h1 class="reg_data_title">Регистрация</h1>
+        <form id="login" method="POST">
           <!-- Ответ ajax -->
-          {{ errorMessage }}
           <span id="loginmessage"></span>
           <!-- Ответ ajax -->
-          <p>E-mail или никнейм</p>
-
-          <input type="text" name="nickname" v-model="username"/>
-
+          <p>Логин</p>
+          <input type="text" name="login" required/>
           <p class="log-pass">Пароль</p>
-
-          <input type="password" name="password" v-model="password"/><br />
-
+          <input type="password" name="password" value="" required/><br />
           <input type="hidden" name="do_login" />
-
-          <button type="submit" name="do_login" >Войти</button>
-
+          <button type="submit" name="do_login">Авторизоваться</button>
         </form>
-
-
       </div>
     </div>
   </div>
