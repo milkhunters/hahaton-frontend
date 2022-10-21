@@ -17,8 +17,8 @@ const routes = [
     {
         path: '/registration',
         name: 'registration',
-        // component: () => import('@/components/registration/registration')
-        redirect: { name: 'login' }
+        component: () => import('@/components/registration/registration')
+
     },
   ]
 
