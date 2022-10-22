@@ -7,6 +7,7 @@ COPY package-lock.json /app/package-lock.json
 RUN npm ci
 
 COPY . /app
+ENV NODE_ENV "production"
 RUN npm run build
 
 

@@ -10,7 +10,7 @@
 
         </div>
         <h1 class="reg_data_title">Вход</h1>
- {{ this.errorMessage }}
+        {{ this.errorMessage }}
         <form @submit.prevent="signIn" method="POST">
           <!-- Ответ ajax -->
           <span id="loginmessage"></span>
@@ -46,17 +46,19 @@ export default {
   },
   methods: {
     async signIn(){
-       const url = 'https://dev-hack.milkhunters.ru/api/v1'
+      const url = process.env.VUE_APP_BASEAPI_URL
 
-      const response = await axios.post(url + "/auth/signIn", {
+      const response = await axios.post(url + "/auth/signin", {
         "username": this.username,
         "password": this.password
+      }, {
+        //"withCredentials": true
       })
       console.log(response)
 
       if (response.status === 200 && response.data.error === undefined)
       {
-        console.log('name' + this.username)
+        console.log('name ' + this.username)
         // localStorage.setItem('isAuth', 'true')
         // localStorage.setItem('user', JSON.stringify(response.data))
         // document.cookie = "user" + "=" + JSON.stringify(response.data);
@@ -72,15 +74,11 @@ export default {
 
 
       } else if (response.data.error !== undefined) {
-
           this.errorMessage = response.data.error.message
-
       }
-
 
     }
   }
-
 }
 
 
