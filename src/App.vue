@@ -27,6 +27,7 @@ export default {
   --primary-color: #8b65fe;
   --primary-color-hover: #6c49d6;
   --body-color: #f6f5f7;
+  --inset-color: #ececec;
   --content-color: #fff;
   --content-color-hover: rgb(240, 240, 240);
   --title-color: #141414;
