@@ -1,5 +1,6 @@
 <template>
 <div>
+  <auth-reg-buttons></auth-reg-buttons>
   <search-app></search-app>
 </div>
 </template>
