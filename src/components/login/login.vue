@@ -75,7 +75,7 @@ export default {
       } else if (response.data.error !== undefined) {
           this.errorMessage = response.data.error.message
 
-          if (response.data.error.code === 920) {
+          /*if (response.data.error.code === 920) {
             if (response.data.role_id >= 20) {
               await router.push({name: 'exhibitors'})
             }
@@ -83,7 +83,7 @@ export default {
             {
               await router.push({name: 'lk'})
             }
-          }
+          }*/
       }
 
     }
