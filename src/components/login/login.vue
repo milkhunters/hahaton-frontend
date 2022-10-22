@@ -9,9 +9,9 @@
           <router-link :to="{name: 'registration'}" class="reg_change_button">Регистрация</router-link>
 
         </div>
-        <h1 class="reg_data_title">Регистрация</h1>
-
-        <form @submit.prevent="signIn" id="login" method="POST">
+        <h1 class="reg_data_title">Вход</h1>
+ {{ this.errorMessage }}
+        <form @submit.prevent="signIn" method="POST">
           <!-- Ответ ajax -->
           <span id="loginmessage"></span>
           <!-- Ответ ajax -->
@@ -54,7 +54,9 @@ export default {
       })
       console.log(response)
 
-      if (response.status === 200 && response.data.error === undefined){
+      if (response.status === 200 && response.data.error === undefined)
+      {
+        console.log('name' + this.username)
         // localStorage.setItem('isAuth', 'true')
         // localStorage.setItem('user', JSON.stringify(response.data))
         // document.cookie = "user" + "=" + JSON.stringify(response.data);
@@ -65,7 +67,7 @@ export default {
         }
         else
         {
-          await router.push({name: 'company'})
+          await router.push({name: 'lk'})
         }
 
 
