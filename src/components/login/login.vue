@@ -76,8 +76,13 @@ export default {
           this.errorMessage = response.data.error.message
 
           if (response.data.error.code === 920) {
-            if (response.data.role_id >= 20) { await router.push({name: 'exhibitors'})}
-            else { await router.push({name: 'lk'}) }
+            if (response.data.role_id >= 20) {
+              await router.push({name: 'exhibitors'})
+            }
+            else
+            {
+              await router.push({name: 'lk'})
+            }
           }
       }
 
