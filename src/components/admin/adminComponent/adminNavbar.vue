@@ -11,7 +11,7 @@
       <router-link :to="{name: 'reviews'}" class="navbar_crud_item">Отзывы</router-link>
       <router-link :to="{name: 'locations'}" class="navbar_crud_item">Локации</router-link>
     </div>
-<!--&lt;!&ndash;    <router-link :to="{name: 'exit'}" class="navbar_exit">Выход <i class="fa-regular fa-right-from-bracket"></i&ndash;&gt;-->
+<!--    <router-link :to="{name: 'exit'}" class="navbar_exit">Выход <i class="fa-regular fa-right-from-bracket"></i-->
 <!--    ></router-link>-->
   </div>
 </template>
@@ -24,7 +24,8 @@ export default {
 
 <style scoped>
 .admin_navbar {
-  max-width: 400px;
+  max-width: 390px;
+  min-width: 370px;
   overflow: hidden;
   background: var(--content-color);
   width: 100%;
