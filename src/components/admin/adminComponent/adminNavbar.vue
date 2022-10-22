@@ -1,18 +1,19 @@
 <template>
   <div class="admin_navbar">
     <h1 class="navbar_title" title="Какое-то название фирмы">
-      Какое-то название фирмы
+      Панель администратора
     </h1>
     <div class="navbar_crud">
-      <router-link :to="{name: 'exhibitors'}" class="navbar_crud_item navbar_crud_item_active">Экспоненты</router-link>
-      <router-link :to="{name: 'products'}" class="navbar_crud_item">Товары</router-link>
-      <router-link :to="{name: 'cases'}" class="navbar_crud_item">Кейсы</router-link>
-      <router-link :to="{name: 'partners'}" class="navbar_crud_item">Партнёры</router-link>
-      <router-link :to="{name: 'reviews'}" class="navbar_crud_item">Отзывы</router-link>
-      <router-link :to="{name: 'locations'}" class="navbar_crud_item">Локации</router-link>
+
+      <router-link :to="{name: 'exhibitors'}" id="exhibitos" class="navbar_crud_item navbar_crud_item_active">Экспоненты</router-link>
+      <router-link :to="{name: 'products'}" id="product" class="navbar_crud_item">Продукты</router-link>
+      <router-link :to="{name: 'cases'}" id="case" class="navbar_crud_item">Кейсы</router-link>
+      <router-link :to="{name: 'partners'}" id="partners" class="navbar_crud_item">Партнёры</router-link>
+      <router-link :to="{name: 'reviews'}" id="reviews" class="navbar_crud_item">Отзывы</router-link>
+      <router-link :to="{name: 'locations'}" id="location" class="navbar_crud_item">Локации</router-link>
     </div>
-<!--    <router-link :to="{name: 'exit'}" class="navbar_exit">Выход <i class="fa-regular fa-right-from-bracket"></i-->
-<!--    ></router-link>-->
+     <router-link :to="{name: 'login'}" class="navbar_exit">Выход <i class="fa-regular fa-right-from-bracket"></i></router-link>
+    <!-- Тут тупо добавить js с запросом апи на /logout. И починить вёрстку-->
   </div>
 </template>
 
@@ -54,10 +55,10 @@ export default {
 .navbar_crud_item:hover {
   background: var(--content-color-hover);
 }
-.navbar_crud_item_active {
-  background: var(--primary-color) !important;
-  color: #fff;
-}
+/*.navbar_crud_item_active {*/
+/*  background: var(--primary-color) !important;*/
+/*  color: #fff;*/
+/*}*/
 .navbar_exit {
   font-size: 21px;
   font-weight: 600;
