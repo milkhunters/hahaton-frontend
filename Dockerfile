@@ -1,4 +1,8 @@
+ARG MODE=production
 FROM node:12-alpine as build
+
+
+ARG MODE
 
 WORKDIR /app
 
@@ -7,7 +11,8 @@ COPY package-lock.json /app/package-lock.json
 RUN npm ci
 
 COPY . /app
-RUN npm run build
+ENV NODE_ENV $MODE
+RUN npm run build -- --mode $MODE
 
 
 FROM nginx:1.16.0-alpine

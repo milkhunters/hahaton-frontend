@@ -10,7 +10,7 @@
 
         </div>
         <h1 class="reg_data_title">Вход</h1>
- {{ this.errorMessage }}
+        {{ this.errorMessage }}
         <form @submit.prevent="signIn" method="POST">
           <!-- Ответ ajax -->
           <span id="loginmessage"></span>
@@ -41,12 +41,13 @@ export default {
     return{
       username: "",
       password: "",
-      errorMessage: ""
+      errorMessage: "",
+      url: process.env.VUE_APP_BASEAPI_URL
     }
   },
   methods: {
     async signIn(){
-       const url = 'https://dev-hack.milkhunters.ru/api/v1'
+      const url = process.env.VUE_APP_BASEAPI_URL
 
       const response = await axios.post(url + "/auth/signIn", {
         "username": this.username,
@@ -56,14 +57,14 @@ export default {
 
       if (response.status === 200 && response.data.error === undefined)
       {
-        console.log('name' + this.username)
+        console.log('name ' + this.username)
         // localStorage.setItem('isAuth', 'true')
         // localStorage.setItem('user', JSON.stringify(response.data))
         // document.cookie = "user" + "=" + JSON.stringify(response.data);
 
         if (response.data.role_id >= 20)
         {
-          await router.push({name: 'admin'})
+          await router.push({name: 'exhibitors'})
         }
         else
         {
@@ -72,14 +73,25 @@ export default {
 
 
       } else if (response.data.error !== undefined) {
-
           this.errorMessage = response.data.error.message
 
+          /*if (response.data.error.code === 920) {
+            if (response.data.role_id >= 20) {
+              await router.push({name: 'exhibitors'})
+            }
+            else
+            {
+              await router.push({name: 'lk'})
+            }
+          }*/
       }
 
-
     }
-  }
+  },
+  // mounted() {
+  //   console.log("xcvbhj")
+  //   axios.post(this.url + "/auth/logout")
+  // }
 
 }
 

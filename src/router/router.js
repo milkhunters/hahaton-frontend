@@ -22,9 +22,10 @@ const routes = [
 
     },
     {
-        path: '/admin/',
+        path: '/admin',
         name: 'admin',
         component: () => import('@/components/admin/admin'),
+        redirect: '/admin/exhibitors',
         children: [
             {
                 path: 'exhibitors',

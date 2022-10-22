@@ -2,7 +2,7 @@
 <div>
   <div class="search search_header">
     <div class="search-container">
-      <span class="icon"><i class="far fa-search"></i></span>
+<!--      <span class="icon"><i class="far fa-search"></i></span>-->
       <input type="search" id="search" placeholder="Поиск..." />
     </div>
   </div>
