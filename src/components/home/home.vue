@@ -1,11 +1,22 @@
 <template>
 
-home
+<div class="homeDiv">
+  <AuthRegButtons/>
+
+</div>
+
 </template>
 
+
+
 <script>
+
+
+import AuthRegButtons from "@/components/navbar/authRegButtons";
 export default {
-  name: "Home-App"
+  name: "Home-App",
+  components: {AuthRegButtons},
+
 }
 </script>
 

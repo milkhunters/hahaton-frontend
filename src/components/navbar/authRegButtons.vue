@@ -1,21 +1,21 @@
 <template>
-  <div class="regNew">
+
     <h2 class="reg_data_name">MilkHunter's</h2>
 
     <div class="reg_change">
+
       <router-link :to="{name: 'login'}" class="reg_change_button">Вход</router-link>
       <router-link :to="{name: 'registration'}" class="reg_change_button">Регистрация</router-link>
-<!--      <button @click="$router.push('/registration')" class="reg_change_button"> Регистрация </button>-->
-<!--      <button  @click="$router.push('/login')" class="reg_change_button active_change_button"> Авторизация </button>-->
+
 
     </div>
-  </div>
+
 
 </template>
 
 <script>
 export default {
-  name: "Navbar-App"
+  name: "AuthRegButtons"
 }
 </script>
 <style>
@@ -71,6 +71,11 @@ body {
   font-weight: 500;
   line-height: 1.6;
 }
+a {
+  text-decoration: none;
+  outline: none;
+  transition: 0.2s ease;
+}
 .reg_change {
   border: 2px solid rgb(215, 215, 215);
   border-radius: 10px;
@@ -78,7 +83,8 @@ body {
   margin-bottom: 20px;
   height: 40px;
   display: flex;
-  width: 100%;
+  width: 300px;
+  justify-content: center;
 
 }
 .reg_change_button {
@@ -95,10 +101,10 @@ body {
   transition: .2s ease;
 }
 .reg_change_button:hover {
-  background: white;
+  background: var(--content-color-hover);
 }
 .reg_change_button.active_change_button {
-  background: white;
+  background: var(--content-color-hover);
 }
 .reg_data_name {
   font-size: 17px;
@@ -107,8 +113,5 @@ body {
   font-family: 'Roboto Mono', monospace;;
   top: 20px;
 }
-.regNew{
-  width: 400px;
-  right: 40px;
-}
+
 </style>

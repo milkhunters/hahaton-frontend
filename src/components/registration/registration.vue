@@ -3,26 +3,35 @@
   <div class="reg_wrapper">
     <div class="reg">
       <div class="reg_data">
+        <div class="reg_change">
 
+            <router-link :to="{name: 'login'}" class="reg_change_button">Вход</router-link>
+            <router-link :to="{name: 'registration'}" class="reg_change_button">Регистрация</router-link>
 
+        </div>
 
         <h1 class="reg_data_title">Регистрация</h1>
         <form id="login" method="POST">
-
           <!-- Ответ ajax -->
           <span id="loginmessage"></span>
           <!-- Ответ ajax -->
+          <div class="reg_data_img_banner">
+            <img id="placeholder1" width=300/><br/>
+            <input id="file" type="file" accept="image/*" />
+          </div>
+          <p>Логин</p>
+          <input type="text" name="login" required/>
           <p>E-mail</p>
-          <input type="email" name="email" value="" />
-          <p>Никнейм</p>
-          <input type="text" name="nickname" />
+          <input type="email" name="email" value="" required/>
+          <p>Название организации</p>
+          <input type="text" name="organisation" required/>
+          <p>ИНН</p>
+          <input type="text" name="inn" required/>
           <p class="log-pass">Пароль</p>
-          <input type="password" name="password" value="" /><br />
+          <input type="password" name="password" value="" required/><br />
           <input type="hidden" name="do_login" />
           <button type="submit" name="do_login">Зарегистрироваться</button>
-
         </form>
-
       </div>
     </div>
   </div>
@@ -38,95 +47,46 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400&display=swap');
-:root {
-  /*========== Colors ==========*/
-  /* light color */
-  --primary-color: #8b65fe;
-  --primary-color-hover: #6c49d6;
-  --body-color: #f6f5f7;
-  --content-color: #fff;
-  --content-color-hover: rgb(240, 240, 240);
-  --title-color: #141414;
-  --border-light: #e8e8e8;
-  --text-color-gray: #8d95a4;
-  --gray-color: #eff7fc;
-
-  --radius: 5px;
-  --radius-8: 8px;
-
-  /* shadow */
-  --shadow-big-content: 0 10px 40px -20px rgb(147 156 176 / 30%);
-  --shadow-small-content: 0 0 12px rgb(0, 0, 0, 0.1);
-
-  /*========== Font and typography ==========*/
-  --body-font: 'Montserrat', -apple-system, Fira Sans, BlinkMacSystemFont, Arial, sans-serif;
-  --text-font: -apple-system, Fira Sans, BlinkMacSystemFont, Arial, sans-serif;
+.container {
+  max-width: 1200px;
+  padding: 40px 80px;
+  margin: 0 auto;
 }
-
-/*========== BASE ==========*/
-*,
-::before,
-::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.sec-title {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding-bottom: 6px;
 }
-html {
-  min-height: 100%;
+.hide-menu {
+  margin-left: 12px;
+  position: relative;
 }
-
-body {
-  min-height: 100%;
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -webkit-overflow-scrolling: touch;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  overflow-x: hidden;
-  font-family: var(--body-font) !important;
-  background-color: var(--body-color);
-  color: var(--title-color);
-  font-weight: 500;
-  line-height: 1.6;
+.hide-menu svg {
+  cursor: pointer;
 }
-body.theme-light {
-  background-color: var(--light-body-color);
+.hide-menu svg use {
+  fill: var(--title-color);
 }
-h1,
-h2,
-h3,
-ul,
-p {
-  margin: 0;
-  list-style: none;
+.hide-menu__inner {
+  position: absolute;
+  z-index: 55;
+  right: 0;
+  background: var(--content-color);
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  display: none;
+  box-shadow: 0 0 10px var(--shadow-color);
 }
-p {
-  line-height: 28px;
-  font-size: 17px;
-  font-family: -apple-system, BlinkMacSystemFont, var(--body-font), Segoe UI,
-  Roboto, Helvetica, Ubuntu, Cantarell, Arial, sans-serif, Apple Color Emoji,
-  Segoe UI Emoji, Segoe UI Symbol;
+.post-options-item {
+  font-size: 0.9rem;
 }
-h1,
-h2,
-h3 {
-  font-weight: var(--font-semi-bold);
-  color: var(--title-color);
+.tippy-box {
+  background: #393d46 !important;
+  font-size: 12px;
 }
-ul {
-  padding: 0;
-  list-style: none;
-}
-a {
-  text-decoration: none;
-  outline: none;
-  transition: 0.2s ease;
-}
-img {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
+.tippy-arrow {
+  color: #393d46 !important;
 }
 .reg_wrapper {
   width: 100%;
@@ -134,6 +94,7 @@ img {
   align-items: center;
   min-height: 100vh;
   height: 100%;
+  background-color: var(--light-body-color);
   background-size: cover;
 }
 .reg {
@@ -141,8 +102,8 @@ img {
   box-shadow: var(--shadow-big-content);
   background: var(--content-color);
   display: flex;
-  margin: 0 auto;
-  width: 400px;
+  margin: 20px auto;
+  width: 600px;
   position: relative;
   overflow: hidden;
 }
@@ -154,6 +115,29 @@ img {
   height: 40px;
   display: flex;
   width: 100%;
+}
+.reg_data_img_banner {
+  border-radius: var(--radius-8);
+  border: 2px dashed var(--border-light);
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  min-height: 250px;
+}
+.reg_data_img_banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-8);
+}
+.reg_data_img_banner input {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: fit-content !important;
+  transform: translateX(-50%);
+  background: var(--content-color);
+  border-radius: var(--radius);
 }
 .reg_change_button {
   width: 50%;
@@ -175,7 +159,7 @@ img {
   background: var(--content-color-hover);
 }
 .reg_data {
-  padding: 80px 50px 60px 50px;
+  padding: 50px;
   border-radius: 30px;
   height: 100%;
   z-index: 2;
@@ -218,7 +202,7 @@ img {
   text-align: center;
   margin-top: 20px;
   cursor: pointer;
-  background: #8b65fe;
+  background: var(--primary-color);
   color: #fff;
   font-weight: 600;
   font-size: 17px;
@@ -227,6 +211,6 @@ img {
   transition: .2s ease;
 }
 .reg_data form button:hover {
-  background: #8b65fe;
+  background: var(--primary-color-hover);
 }
 </style>
