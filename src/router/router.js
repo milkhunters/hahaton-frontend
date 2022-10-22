@@ -2,6 +2,7 @@
 import {createRouter, createWebHistory} from "vue-router";
 
 
+
 const routes = [
     {
         path: '/',
@@ -23,13 +24,45 @@ const routes = [
     {
         path: '/admin',
         name: 'admin',
-        component: () => import('@/components/admin/admin')
+        component: () => import('@/components/admin/admin'),
+        children: [
+            {
+                path: 'exhibitors',
+                component: () => import('@/components/admin/adminPages/adminExhibitors.vue')
+            },
+            {
+                path: 'case',
+                component: () => import('@/components/admin/adminPages/adminCase.vue')
+            },
+            {
+                path: 'product',
+                component: () => import('@/components/admin/adminPages/adminProduct.vue')
+            },
+            {
+                path: 'partner',
+                component: () => import('@/components/admin/adminPages/adminPartner.vue')
+            },
+            {
+                path: 'reviews',
+                component: () => import('@/components/admin/adminPages/adminReviews.vue')
+            },
+            {
+                path: 'location',
+                component: () => import('@/components/admin/adminPages/adminLocations.vue')
+            },
+        ]
     },
     {
-        path: '/company_lk',
-        name: 'company_lk',
+        path: '/company' + "id",
+        name: 'company',
         component: () => import('@/components/company/company')
     },
+    {
+        path: '/lk',
+        name: 'lk',
+        component: () => import('@/components/lk/lk')
+    },
+
   ]
 
 const router = createRouter({
