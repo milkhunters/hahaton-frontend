@@ -25,10 +25,6 @@ export default {
   methods: {
     hideDialog() {
       this.$emit('update:show', false)
-    },
-    exit() {
-      // eslint-disable-next-line vue/no-mutating-props
-      this.show = false
     }
   }
 }
