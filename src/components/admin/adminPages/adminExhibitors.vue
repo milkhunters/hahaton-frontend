@@ -16,7 +16,8 @@
       <th>Импортозамещение</th>
     </tr>
 
-    <tr v-for="item in exhibitors2" :key="item.id">
+
+    <tr class="record" v-for="item in exhibitors2" :key="item.id" @click="showDialog">
       <th>{{ item.id }}</th>
       <th>{{ item.title }}</th>
       <th>{{ item.inn }}</th>
@@ -28,17 +29,21 @@
     </tr>
 
 
+    <modal-window v-model:show="dialogVisible"></modal-window>
+
   </table>
 </div>
 </template>
 
 <script>
 import AdminSearch from "@/components/admin/adminComponent/adminSearch";
+import ModalWindow from "@/components/admin/ModalWindow/modalWindow";
 export default {
   name: "ExhibitorsApp",
-  components: {AdminSearch},
+  components: {ModalWindow, AdminSearch},
   data() {
     return{
+      dialogVisible: false,
       exhibitors: [
         {
           id: 1, exName: 'Ростсельмаш', ExInn: '123456789123', exFIO: 'Петров Петр', exCategorie: 'Сельхоз-техника', exStatus: 'Принято', exDate: '20.10.2022', exManufacture: 'Да'
@@ -46,86 +51,107 @@ export default {
           ],
       exhibitors2: [
             {
-              "id": 3,
-              "import_substitution_shield": false,
-              "category_id": null,
-              "legal_address": null,
-              "logo": null,
-              "about": null,
-              "cover": null,
-              "description": null,
-              "company_url": null,
-              "manufacture_address": null,
-              "catalog_id": null,
+              "id": 'alim',
+              "import_substitution_shield": 'alim',
+              "category_id": 'alim',
+              "legal_address": 'alim',
+              "logo": 'alim',
+              "about": 'alim',
+              "cover": 'alim',
+              "description": 'alim',
+              "company_url": 'alim',
+              "manufacture_address": 'alim',
+              "catalog_id": 'alim',
               "inn": "3664069397",
               "title": "ООО Супер Компания",
-              "phone_number": null
+              "phone_number": 'alim'
             },
         {
-          "id": 4,
-          "import_substitution_shield": false,
-          "category_id": null,
-          "legal_address": null,
-          "logo": null,
-          "about": null,
-          "cover": null,
-          "description": null,
-          "company_url": null,
-          "manufacture_address": null,
-          "catalog_id": null,
-          "inn": "36640693r97",
-          "title": "ООО Супер Пупер Компания",
-          "phone_number": null
+          "id": 'alim',
+          "import_substitution_shield": 'alim',
+          "category_id": 'alim',
+          "legal_address": 'alim',
+          "logo": 'alim',
+          "about": 'alim',
+          "cover": 'alim',
+          "description": 'alim',
+          "company_url": 'alim',
+          "manufacture_address": 'alim',
+          "catalog_id": 'alim',
+          "inn": "3664069397",
+          "title": "ООО Супер Компания",
+          "phone_number": 'alim'
         },
-        {
-          "id": 5,
-          "import_substitution_shield": false,
-          "category_id": null,
-          "legal_address": null,
-          "logo": null,
-          "about": null,
-          "cover": null,
-          "description": null,
-          "company_url": null,
-          "manufacture_address": null,
-          "catalog_id": null,
-          "inn": "366406397",
-          "title": "ООО Супер Мега Компания",
-          "phone_number": null
-        },
-        {
-          "id": 6,
-          "import_substitution_shield": false,
-          "category_id": null,
-          "legal_address": null,
-          "logo": null,
-          "about": null,
-          "cover": null,
-          "description": null,
-          "company_url": null,
-          "manufacture_address": null,
-          "catalog_id": null,
-          "inn": "123456789123",
-          "title": "ООО РогаКопыта",
-          "phone_number": null
-        },
-        {
-          "id": 7,
-          "import_substitution_shield": false,
-          "category_id": null,
-          "legal_address": null,
-          "logo": null,
-          "about": null,
-          "cover": null,
-          "description": null,
-          "company_url": null,
-          "manufacture_address": null,
-          "catalog_id": null,
-          "inn": "1337420228",
-          "title": "JobGames",
-          "phone_number": null
-        }
+        // {
+        //   "id": 4,
+        //   "import_substitution_shield": false,
+        //   "category_id": null,
+        //   "legal_address": null,
+        //   "logo": null,
+        //   "about": null,
+        //   "cover": null,
+        //   "description": null,
+        //   "company_url": null,
+        //   "manufacture_address": null,
+        //   "catalog_id": null,
+        //   "inn": "36640693r97",
+        //   "title": "ООО Супер Пупер Компания",
+        //   "phone_number": null
+        // },
+        // {
+        //   "id": 5,
+        //   "import_substitution_shield": false,
+        //   "category_id": null,
+        //   "legal_address": null,
+        //   "logo": null,
+        //   "about": null,
+        //   "cover": null,
+        //   "description": null,
+        //   "company_url": null,
+        //   "manufacture_address": null,
+        //   "catalog_id": null,
+        //   "inn": "366406397",
+        //   "title": "ООО Супер Мега Компания",
+        //   "phone_number": null
+        // },
+        // {
+        //   "id": 6,
+        //   "import_substitution_shield": false,
+        //   "category_id": null,
+        //   "legal_address": null,
+        //   "logo": null,
+        //   "about": null,
+        //   "cover": null,
+        //   "description": null,
+        //   "company_url": null,
+        //   "manufacture_address": null,
+        //   "catalog_id": null,
+        //   "inn": "123456789123",
+        //   "title": "ООО РогаКопыта",
+        //   "phone_number": null
+        // },
+        // {
+        //   "id": 7,
+        //   "import_substitution_shield": false,
+        //   "category_id": null,
+        //   "legal_address": null,
+        //   "logo": null,
+        //   "about": null,
+        //   "cover": null,
+        //   "description": null,
+        //   "company_url": null,
+        //   "manufacture_address": null,
+        //   "catalog_id": null,
+        //   "inn": "1337420228",
+        //   "title": "JobGames",
+        //   "phone_number": null
+        // }
       ]
+    }
+  },
+  methods: {
+    showDialog() {
+      this.dialogVisible = true
     }
   }
 
@@ -163,5 +189,12 @@ export default {
   align-items: center;
   width: 100%;
   height: 100%;
+}
+.record{
+  cursor: pointer;
+}
+
+.record:hover{
+  box-shadow: 0px 8px 4px -6px rgba(0,0,0,0.9) ;
 }
 </style>
