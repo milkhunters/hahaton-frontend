@@ -3,8 +3,8 @@
     <div class="admin_wrapper">
       <admin-navbar></admin-navbar>
       <div class="admin_data">
-        <h2 class="data_title">Экспоненты</h2>
-        <admin-search></admin-search>
+<!--        <h2 class="data_title">Экспоненты</h2>-->
+<!--        <admin-search></admin-search>-->
         <admin-form></admin-form>
       </div>
     </div>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import AdminSearch from "@/components/admin/adminComponent/AdminSearch";
+// import AdminSearch from "@/components/admin/adminComponent/adminSearch";
 
 import adminNavbar from "@/components/admin/adminComponent/adminNavbar";
 
@@ -20,10 +20,16 @@ import adminForm from "@/components/admin/adminComponent/adminForm";
 
 export default {
   name: "AdminApp",
-  components: {AdminSearch, adminNavbar, adminForm}
+  components: { adminNavbar, adminForm},
+  // mounted() {
+  //   if (router === '/admin/products')
+  //   document.getElementById("product").style.backgroundColor = 'blue';
+  //   document.getElementById('product').style.color = 'white';
+  // }
+  }
 
-}
 </script>
+
 
 <style scoped>
 .admin_cover {
