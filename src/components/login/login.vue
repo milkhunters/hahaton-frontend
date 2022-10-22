@@ -78,9 +78,10 @@ export default {
 
     }
   },
-  mounted() {
-    axios.post(this.url + "/auth/logout")
-  }
+  // mounted() {
+  //   console.log("xcvbhj")
+  //   axios.post(this.url + "/auth/logout")
+  // }
 
 }
 

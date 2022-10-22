@@ -12,21 +12,23 @@
       <router-link :to="{name: 'reviews'}" id="reviews" class="navbar_crud_item">Отзывы</router-link>
       <router-link :to="{name: 'locations'}" id="location" class="navbar_crud_item">Локации</router-link>
     </div>
-     <router-link :to="{name: 'login'}" class="navbar_exit" @click="logOut">Выход <i class="fa-regular fa-right-from-bracket"></i></router-link>
+     <div class="navbar_exit" @click="logOut">Выход <i class="fa-regular fa-right-from-bracket"></i></div>
     <!-- Тут тупо добавить js с запросом апи на /logout. И починить вёрстку-->
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import router from "@/router/router";
 
 export default {
   name: "adminNavbar",
   methods: {
 
     async logOut() {
-      const url = 'https://dev-hack.milkhunters.ru/api/v1'
-      await axios.get(url + "/auth/logout")
+      const url = process.env.VUE_APP_BASEAPI_URL
+      await axios.post(url + "/auth/logout", {})
+      await router.push({name: 'login'})
     }
 
   }
