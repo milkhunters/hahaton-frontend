@@ -22,38 +22,44 @@ const routes = [
 
     },
     {
-        path: '/admin',
+        path: '/admin/',
         name: 'admin',
         component: () => import('@/components/admin/admin'),
         children: [
             {
                 path: 'exhibitors',
+                name: 'exhibitors',
                 component: () => import('@/components/admin/adminPages/adminExhibitors.vue')
             },
             {
-                path: 'case',
+                path: 'cases',
+                name: 'cases',
                 component: () => import('@/components/admin/adminPages/adminCase.vue')
             },
             {
-                path: 'product',
+                path: 'products',
+                name: 'products',
                 component: () => import('@/components/admin/adminPages/adminProduct.vue')
             },
             {
-                path: 'partner',
+                path: 'partners',
+                name: 'partners',
                 component: () => import('@/components/admin/adminPages/adminPartner.vue')
             },
             {
                 path: 'reviews',
+                name: 'reviews',
                 component: () => import('@/components/admin/adminPages/adminReviews.vue')
             },
             {
-                path: 'location',
+                path: 'locations',
+                name: 'locations',
                 component: () => import('@/components/admin/adminPages/adminLocations.vue')
             },
         ]
     },
     {
-        path: '/company' + "id",
+        path: '/company',
         name: 'company',
         component: () => import('@/components/company/company')
     },

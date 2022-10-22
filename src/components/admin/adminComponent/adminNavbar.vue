@@ -4,15 +4,15 @@
       Какое-то название фирмы
     </h1>
     <div class="navbar_crud">
-      <router-link :to="{name: 'exponent'}" class="navbar_crud_item navbar_crud_item_active">Экспоненты</router-link>
+      <router-link :to="{name: 'exhibitors'}" class="navbar_crud_item navbar_crud_item_active">Экспоненты</router-link>
       <router-link :to="{name: 'products'}" class="navbar_crud_item">Товары</router-link>
       <router-link :to="{name: 'cases'}" class="navbar_crud_item">Кейсы</router-link>
       <router-link :to="{name: 'partners'}" class="navbar_crud_item">Партнёры</router-link>
       <router-link :to="{name: 'reviews'}" class="navbar_crud_item">Отзывы</router-link>
       <router-link :to="{name: 'locations'}" class="navbar_crud_item">Локации</router-link>
     </div>
-    <router-link :to="{name: 'exit'}" class="navbar_exit">Выход <i class="fa-regular fa-right-from-bracket"></i
-    ></router-link>
+<!--&lt;!&ndash;    <router-link :to="{name: 'exit'}" class="navbar_exit">Выход <i class="fa-regular fa-right-from-bracket"></i&ndash;&gt;-->
+<!--    ></router-link>-->
   </div>
 </template>
 
