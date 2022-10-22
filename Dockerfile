@@ -1,6 +1,9 @@
 ARG MODE=production
 FROM node:12-alpine as build
 
+
+ARG MODE
+
 WORKDIR /app
 
 COPY package.json /app/package.json
