@@ -15,17 +15,14 @@
         </tr>
 
 
-      <tr v-for="item in exhibitors" :key="item.id">
+      <tr v-for="item in products" :key="item.id">
         <td>{{ item.id }}</td>
         <td>{{ item.companyName }}</td>
         <td>{{ item.categorie }}</td>
         <td>{{ item.fio }}</td>
         <td>{{ item.status }}</td>
         <td>{{ item.date }}</td>
-        <td><a href="#" class="table_link">+</a></td>
       </tr>
-
-
 
     </table>
   </div>
@@ -39,9 +36,9 @@ export default {
   components: {AdminSearch},
   data() {
     return{
-      exhibitors: [
+      products: [
         {
-          id: 1, companyName: 'Ростсельмаш', categorie: 'Сельхоз-техника', fio: 'Иванов Иван', inn: '123456789', status: 'Принято', date: '12.10.2022'
+          id: 1, productType: '', productManufacture: '', productBrend: '', productName: 'Ростсельмаш', productePrice: '', productCategorie: 'Сельхоз-техника', productShield: '', productStatus: 'Принято' , productDate: '12.10.2022'
         },
         {
           id: 2, companyName: 'Оджетто', categorie: 'Программное обеспечение', fio: 'Петров Никита ', inn: '646432763', status: 'Принято', date: '23.8.2022'

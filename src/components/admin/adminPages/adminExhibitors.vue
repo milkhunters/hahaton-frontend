@@ -5,25 +5,28 @@
 <div>
   <table class="admin_table">
 
-    <tr>
+    <tr class="admin_table_title">
       <th>ID</th>
       <th>Наименование</th>
-      <th>...</th>
+      <th>Инн</th>
+      <th>ФИО</th>
+      <th>Категория</th>
+      <th>Статус заявки</th>
+      <th>Дата</th>
+      <th>Импортозамещение</th>
     </tr>
 
-    <tr>
-      <td>1</td>
-      <td>Ростсельмаш</td>
-      <td>20,00</td>
-      <td><a href="#" class="table_link">+</a></td>
+    <tr class="admin_table_newtitle" v-for="item in exhibitors2" :key="item.id">
+      <th>{{ item.id }}</th>
+      <th>{{ item.title }}</th>
+      <th>{{ item.inn }}</th>
+      <th>ФИО</th>
+      <th>Категория</th>
+      <th>Статус заявки</th>
+      <th>Дата</th>
+      <th>{{ item.import_substitution_shield }}</th>
     </tr>
 
-    <tr>
-      <td>2</td>
-      <td>Какая-то ещё компания</td>
-      <td>30,00</td>
-      <td><a href="#" class="table_link">+</a></td>
-    </tr>
 
   </table>
 </div>
@@ -34,7 +37,97 @@ import AdminSearch from "@/components/admin/adminComponent/adminSearch";
 export default {
   name: "ExhibitorsApp",
   components: {AdminSearch},
-
+  data() {
+    return{
+      exhibitors: [
+        {
+          id: 1, exName: 'Ростсельмаш', ExInn: '123456789123', exFIO: 'Петров Петр', exCategorie: 'Сельхоз-техника', exStatus: 'Принято', exDate: '20.10.2022', exManufacture: 'Да'
+        }
+          ],
+      exhibitors2: [
+            {
+              "id": 3,
+              "import_substitution_shield": false,
+              "category_id": null,
+              "legal_address": null,
+              "logo": null,
+              "about": null,
+              "cover": null,
+              "description": null,
+              "company_url": null,
+              "manufacture_address": null,
+              "catalog_id": null,
+              "inn": "3664069397",
+              "title": "ООО Супер Компания",
+              "phone_number": null
+            },
+        {
+          "id": 4,
+          "import_substitution_shield": false,
+          "category_id": null,
+          "legal_address": null,
+          "logo": null,
+          "about": null,
+          "cover": null,
+          "description": null,
+          "company_url": null,
+          "manufacture_address": null,
+          "catalog_id": null,
+          "inn": "36640693r97",
+          "title": "ООО Супер Пупер Компания",
+          "phone_number": null
+        },
+        {
+          "id": 5,
+          "import_substitution_shield": false,
+          "category_id": null,
+          "legal_address": null,
+          "logo": null,
+          "about": null,
+          "cover": null,
+          "description": null,
+          "company_url": null,
+          "manufacture_address": null,
+          "catalog_id": null,
+          "inn": "366406397",
+          "title": "ООО Супер Мега Компания",
+          "phone_number": null
+        },
+        {
+          "id": 6,
+          "import_substitution_shield": false,
+          "category_id": null,
+          "legal_address": null,
+          "logo": null,
+          "about": null,
+          "cover": null,
+          "description": null,
+          "company_url": null,
+          "manufacture_address": null,
+          "catalog_id": null,
+          "inn": "123456789123",
+          "title": "ООО РогаКопыта",
+          "phone_number": null
+        },
+        {
+          "id": 7,
+          "import_substitution_shield": false,
+          "category_id": null,
+          "legal_address": null,
+          "logo": null,
+          "about": null,
+          "cover": null,
+          "description": null,
+          "company_url": null,
+          "manufacture_address": null,
+          "catalog_id": null,
+          "inn": "1337420228",
+          "title": "JobGames",
+          "phone_number": null
+        }
+      ]
+    }
+  }
 
 }
 </script>
@@ -55,6 +148,7 @@ export default {
   border-bottom: 2px solid var(--border-light);
   text-align: left;
   padding: 4px;
+  /*font-weight: 500;*/
 }
 .admin_table td {
   border-right: 2px solid var(--border-light);
@@ -67,5 +161,12 @@ export default {
   align-items: center;
   width: 100%;
   height: 100%;
+}
+.admin_table_title{
+  font-weight: 500;
+}
+
+.admin_table_newtitle {
+  font-weight: 600;
 }
 </style>
