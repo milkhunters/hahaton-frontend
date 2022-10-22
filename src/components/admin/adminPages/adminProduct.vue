@@ -41,11 +41,8 @@ export default {
           id: 1, productType: '', productManufacture: '', productBrend: '', productName: 'Ростсельмаш', productePrice: '', productCategorie: 'Сельхоз-техника', productShield: '', productStatus: 'Принято' , productDate: '12.10.2022'
         },
         {
-          id: 2, companyName: 'Оджетто', categorie: 'Программное обеспечение', fio: 'Петров Никита ', inn: '646432763', status: 'Принято', date: '23.8.2022'
+          id: 2, productType: '', productManufacture: '', productBrend: '', productName: 'Ростсельмаш', productePrice: '', productCategorie: 'Сельхоз-техника', productShield: '', productStatus: 'Принято' , productDate: '12.10.2022'
         },
-        {
-          id: 3, companyName: 'Магнит', categorie: 'Сеть розничных магазинов', fio: 'Бояр Недвояр', inn: '992837563', status: 'Принято', date: '08.01.2022'
-        }
       ]
     }
   },
