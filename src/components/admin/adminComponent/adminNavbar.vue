@@ -1,10 +1,12 @@
 <template>
-
+<div>
+Admin NAvbar
+</div>
 </template>
 
 <script>
 export default {
-  name: "AdminSearch"
+  name: "adminNavbar"
 }
 </script>
 

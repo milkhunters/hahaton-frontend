@@ -1,12 +1,12 @@
 <template>
 <div>
-
+Admin Form
 </div>
 </template>
 
 <script>
 export default {
-  name: "adminNavbar"
+  name: "adminForm"
 }
 </script>
 

@@ -20,6 +20,16 @@ const routes = [
         component: () => import('@/components/registration/registration')
 
     },
+    {
+        path: '/admin',
+        name: 'admin',
+        component: () => import('@/components/admin/admin')
+    },
+    {
+        path: '/company_lk',
+        name: 'company_lk',
+        component: () => import('@/components/company/company')
+    },
   ]
 
 const router = createRouter({

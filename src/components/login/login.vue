@@ -10,7 +10,8 @@
 
         </div>
         <h1 class="reg_data_title">Регистрация</h1>
-        <form id="login" method="POST">
+
+        <form @submit.prevent="signIn" id="login" method="POST">
           <!-- Ответ ajax -->
           <span id="loginmessage"></span>
           <!-- Ответ ajax -->
@@ -21,18 +22,12 @@
           <input type="hidden" name="do_login" />
           <button type="submit" name="do_login">Авторизоваться</button>
         </form>
+
       </div>
     </div>
   </div>
   </body>
 </template>
-
-
-
-
-
-
-
 
 <script>
 import router from "@/router/router";
@@ -62,7 +57,15 @@ export default {
         // localStorage.setItem('user', JSON.stringify(response.data))
         // document.cookie = "user" + "=" + JSON.stringify(response.data);
 
-        await router.push({name: 'dashboard'})
+        if (response.data.role_id >= 20)
+        {
+          await router.push({name: 'admin'})
+        }
+        else
+        {
+          await router.push({name: 'company'})
+        }
+
 
       } else if (response.data.error !== undefined) {
 
