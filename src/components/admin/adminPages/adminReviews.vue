@@ -52,6 +52,7 @@ export default {
 </script>
 
 <style scoped>
+
 .admin_table {
   margin-top: 20px;
   width: 100%;
@@ -77,4 +78,5 @@ export default {
   width: 100%;
   height: 100%;
 }
+
 </style>
