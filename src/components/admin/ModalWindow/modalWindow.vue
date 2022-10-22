@@ -4,7 +4,18 @@
 
 <div @click.stop class="dialog__content">
   <slot>
-    Modal Windows
+
+   id {{ content }}
+<!--    <tr class="record" v-for="item in content" :key="item.id">-->
+<!--      <th>{{ item.id }}</th>-->
+<!--      <th>{{ item.title }}</th>-->
+<!--      <th>{{ item.inn }}</th>-->
+<!--      <th>ФИО</th>-->
+<!--      <th>Категория</th>-->
+<!--      <th>Статус заявки</th>-->
+<!--      <th>Дата</th>-->
+<!--      <th>{{ item.import_substitution_shield }}</th>-->
+<!--    </tr>-->
 
   </slot>
 </div>
@@ -20,6 +31,9 @@ export default {
     show: {
       type: Boolean,
       default: false
+    },
+    content: {
+
     }
   },
   methods: {
