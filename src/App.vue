@@ -24,22 +24,22 @@ export default {
 :root {
   /*========== Colors ==========*/
 
-  --primary-color: #8b65fe;
+  --primary-color: #1755E7;
   --primary-color-hover: #6c49d6;
   --body-color: #f6f5f7;
   --inset-color: #ececec;
   --content-color: #fff;
-  --content-color-hover: rgb(240, 240, 240);
+  --content-color-hover: rgb(242, 242, 242);
   --title-color: #141414;
-  --border-light: #adadad;
-  --text-color-gray: #8d95a4;
+  --border-light: #f1f1f1;
+  --text-color-gray: #7d8493;
   --gray-color: #eff7fc;
 
   --radius: 5px;
   --radius-8: 8px;
 
   /* shadow */
-  --shadow-big-content: 0 0 12px rgb(0, 0, 0, 0.16);
+  --shadow-big-content: 0 0 12px rgb(0, 0, 0, 0.13);
   --shadow-small-content: 0 0 12px rgb(0, 0, 0, 0.1);
 
   /*========== Font and typography ==========*/
@@ -89,7 +89,6 @@ p {
 h1,
 h2,
 h3 {
-  font-weight: var(--font-semi-bold);
   color: var(--title-color);
 }
 ul {
