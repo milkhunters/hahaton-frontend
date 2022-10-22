@@ -16,10 +16,12 @@
           <span id="loginmessage"></span>
           <!-- Ответ ajax -->
           <p>Логин</p>
-          <input type="text" name="login" required/>
+          <input v-model="username" type="text" name="login" required/>
+
           <p class="log-pass">Пароль</p>
-          <input type="password" name="password" value="" required/><br />
-          <input type="hidden" name="do_login" />
+          <input v-model="password" type="password" name="password" required/>
+
+
           <button type="submit" name="do_login">Авторизоваться</button>
         </form>
 

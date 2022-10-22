@@ -1,6 +1,6 @@
 <template>
 <div>
-Admin NAvbar
+Admin Navbar
 </div>
 </template>
 
