@@ -28,11 +28,6 @@ const routes = [
         redirect: '/admin/exhibitors',
         children: [
             {
-                path: '',
-                name: 'exhibitors',
-                component: () => import('@/components/admin/adminPages/adminExhibitors.vue')
-            },
-            {
                 path: 'exhibitors',
                 name: 'exhibitors',
                 component: () => import('@/components/admin/adminPages/adminExhibitors.vue')

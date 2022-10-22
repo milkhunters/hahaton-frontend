@@ -41,7 +41,8 @@ export default {
     return{
       username: "",
       password: "",
-      errorMessage: ""
+      errorMessage: "",
+      url: process.env.VUE_APP_BASEAPI_URL
     }
   },
   methods: {
@@ -51,8 +52,6 @@ export default {
       const response = await axios.post(url + "/auth/signIn", {
         "username": this.username,
         "password": this.password
-      }, {
-        //"withCredentials": true
       })
       console.log(response)
 
@@ -65,7 +64,7 @@ export default {
 
         if (response.data.role_id >= 20)
         {
-          await router.push({name: 'admin'})
+          await router.push({name: 'exhibitors'})
         }
         else
         {
@@ -78,7 +77,11 @@ export default {
       }
 
     }
+  },
+  mounted() {
+    axios.post(this.url + "/auth/logout")
   }
+
 }
 
 
