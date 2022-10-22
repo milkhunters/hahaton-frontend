@@ -48,7 +48,7 @@ export default {
     async signIn(){
       const url = process.env.VUE_APP_BASEAPI_URL
 
-      const response = await axios.post(url + "/auth/signin", {
+      const response = await axios.post(url + "/auth/signIn", {
         "username": this.username,
         "password": this.password
       }, {
