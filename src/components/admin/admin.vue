@@ -46,4 +46,16 @@ export default {
   border-radius: 25px;
   width: 100%;
 }
+/* data */
+.admin_data {
+  background: var(--content-color);
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+}
+.data_title {
+  font-weight: 600;
+  font-size: 21px;
+  margin-bottom: 20px;
+}
 </style>
