@@ -38,6 +38,7 @@
 <script>
 import AdminSearch from "@/components/admin/adminComponent/adminSearch";
 import ModalWindow from "@/components/admin/ModalWindow/modalWindow";
+import axios from "axios";
 export default {
   name: "ExhibitorsApp",
   components: {ModalWindow, AdminSearch},
@@ -45,6 +46,8 @@ export default {
     return {
       dialogVisible: false,
       idItem: 0,
+      url: process.env.VUE_APP_BASEAPI_URL,
+      newExhibitors:[],
       exhibitors: [
         {
           id: 1,
@@ -162,8 +165,14 @@ export default {
       console.log(id)
       this.dialogVisible = true
       this.idItem = id
-    }
+    },
 
+
+  },
+  mounted() {
+    const response = axios.get(process.env.VUE_APP_BASEAPI_URL + "admin/company/get")
+    // this.newExhibitors = response.data
+    console.log(response)
   }
 }
 </script>
