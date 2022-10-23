@@ -58,9 +58,6 @@ export default {
       if (response.status === 200 && response.data.error === undefined)
       {
         console.log('name ' + this.username)
-        // localStorage.setItem('isAuth', 'true')
-        // localStorage.setItem('user', JSON.stringify(response.data))
-        // document.cookie = "user" + "=" + JSON.stringify(response.data);
 
         if (response.data.role_id >= 20)
         {
@@ -88,10 +85,6 @@ export default {
 
     }
   },
-  // mounted() {
-  //   console.log("xcvbhj")
-  //   axios.post(this.url + "/auth/logout")
-  // }
 
 }
 
