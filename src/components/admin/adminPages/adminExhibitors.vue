@@ -18,14 +18,14 @@
 
 
     <tr class="record" @click="showDialog(item)" v-for="item in newExhibitors"  :key="item.id">
-      <th>{{ item.id }}</th>
-      <th>{{ item.title }}</th>
-      <th>{{ item.inn }}</th>
+      <th>{{ item.company.id }}</th>
+      <th>{{ item.company.title }}</th>
+      <th>{{ item.company.inn }}</th>
       <th>ФИО</th>
       <th>Категория</th>
       <th>Статус заявки</th>
       <th>Дата</th>
-      <th>{{ item.import_substitution_shield }}</th>
+      <th>{{ item.company.import_substitution_shield }}</th>
     </tr>
 
 
@@ -60,11 +60,12 @@ export default {
 
   },
   async mounted() {
-    const response = await axios.get(process.env.VUE_APP_BASEAPI_URL + "/admin/company/get")
+    const response = await axios.get(process.env.VUE_APP_BASEAPI_URL + "/user/get")
 
     this.newExhibitors = response.data
 
-    console.log("test 1")
+    console.log(this.newExhibitors)
+    console.log(response)
 
 
   }
