@@ -49,17 +49,16 @@ export default {
   data() {
     return{
       // names: [{id:1, v:'ID', d: 'id'}, {id:2,v:'About', d:''}, {id:3,v:'Company_Url', d:''}, {id:4,v:'Cover', d:''}, {id:5,v:'Create_Time', d:''}, {id:6,v:'Description', d:''}, {id:7,v:'Exhibitor', d:''}, {id:8,v:'Import', d:''}, {id:9,v:'Inn', d:''}, {id:10,v:'Address', d:''}, {id:11,v:'Logo', d:''}, {id:12,v:'Manufacture', d:''}, {id:13,v:'PhoneNumber', d:''}, {id:14,v:'Title', d:''}, {id:15, v:'UpdateTime', d:''}],
-
-      title: "",
-      description: "",
-      about: "",
-      logo: "",
-      cover: "",
-      company_url: "",
-      phone_number: "",
-      inn: "",
-      legal_address: "",
-      manufacture_address: "",
+      title: null,
+      description: null,
+      about: null,
+      logo: null,
+      cover: null,
+      company_url: null,
+      phone_number: null,
+      inn: null,
+      legal_address: null,
+      manufacture_address: null,
       import_substitution_shield: true
     }
   },

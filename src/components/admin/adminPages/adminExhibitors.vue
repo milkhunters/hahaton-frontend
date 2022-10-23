@@ -60,11 +60,12 @@ export default {
 
   },
   async mounted() {
-    const response = await axios.get(process.env.VUE_APP_BASEAPI_URL + "/admin/company/get")
+    const response = await axios.get(process.env.VUE_APP_BASEAPI_URL + "/user/get")
 
-    this.newExhibitors = response.data
+    this.newExhibitors = response.data.company
 
-    console.log("test 1")
+    console.log(this.newExhibitors)
+    console.log(response)
 
 
   }
