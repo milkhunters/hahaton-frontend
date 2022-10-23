@@ -11,16 +11,18 @@
         </div>
 
         <h1 class="reg_data_title">Регистрация</h1>
-        <form id="login" method="POST">
+        <form @submit.prevent="signUp" id="login" method="POST">
           <!-- Ответ ajax -->
           <span id="loginmessage"></span>
           <!-- Ответ ajax -->
-          <div class="reg_data_img_banner">
+<!--          <div class="reg_data_img_banner">
             <img id="placeholder1" width=300/><br/>
             <input id="file" type="file" accept="image/*" />
-          </div>
+          </div>-->
           <p>Логин</p>
           <input type="text" name="login" required/>
+          <p>ФИО</p>
+          <input type="text" name="full_name" required/>
           <p>E-mail</p>
           <input type="email" name="email" value="" required/>
           <p>Название организации</p>
@@ -39,10 +41,45 @@
 </template>
 
 <script>
-
+import router from "@/router/router";
+import axios from "axios";
 
 export default {
-  name: "Registration-App"
+  name: "Registration-App",
+  data() {
+    return{
+      username: "",
+      password: "",
+      email: "",
+      full_name: "",
+      company_name: "",
+      inn: "",
+      errorMessage: "",
+      url: process.env.VUE_APP_BASEAPI_URL
+    }
+  },
+  methods: {
+    async signUp(){
+      const url = process.env.VUE_APP_BASEAPI_URL
+
+      const response = await axios.post(url + "/auth/signIn", {
+        "username": this.username,
+        "password": this.password,
+        "email": this.email,
+        "full_name": this.full_name,
+        "company_name": this.company_name,
+        "inn": this.inn
+      })
+
+
+      if (response.status === 200 && response.data.error === undefined) {
+        await router.push({name: 'registration-success'})
+      } else if (response.data.error !== undefined) {
+        this.errorMessage = response.data.error.message
+      }
+
+    }
+  },
 }
 </script>
 
