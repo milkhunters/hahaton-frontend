@@ -6,33 +6,33 @@
   <slot>
     ID - {{ content.id }}
     <br>
-   {{content.about  }}
+   About - {{content.about  }}
     <br>
-    {{ content.company_url }}
+    Company_Url - {{ content.company_url }}
     <br>
-    {{ content.cover }}
+    Cover - {{ content.cover }}
     <br>
-   {{ content.create_time }}
+   Create-Time - {{ content.create_time }}
     <br>
-    {{content.description}}
+    Description - {{content.description}}
     <br>
-    {{content.exhibitor}}
+    Exhibitor - {{content.exhibitor}}
     <br>
-    {{ content.import_substitution_shield }}
+    Imoprt - {{ content.import_substitution_shield }}
     <br>
-    {{ content.inn }}
+    Inn - {{ content.inn }}
     <br>
-    {{content.legal_address}}
+    Address - {{content.legal_address}}
     <br>
-    {{content.logo}}
+    Logo - {{content.logo}}
     <br>
-    {{content.manufacture_address}}
+    Manufacture - {{content.manufacture_address}}
     <br>
-    {{content.phone_number}}
+    Phone Number - {{content.phone_number}}
     <br>
-    {{content.title}}
+    Title - {{content.title}}
     <br>
-    {{content.update_time}}
+    UpdateTiem - {{content.update_time}}
 <!--    <tr class="record" v-for="item in content" :key="item.id">-->
 <!--      <th>{{ item.id }}</th>-->
 <!--      <th>{{ item.title }}</th>-->
