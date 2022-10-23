@@ -75,6 +75,7 @@ export default {
 
       if (response.status === 200 && response.data.error === undefined) {
         await router.push({name: 'registration-success'})
+        this.errorMessage = "Успех! Ожидайте оповещения на почту"
       } else if (response.data.error !== undefined) {
         this.errorMessage = response.data.error.message
       }
