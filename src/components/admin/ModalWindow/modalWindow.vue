@@ -13,9 +13,9 @@
     <br>
    About - {{content.about  }} - <input v-model="about">
     <br>
-    Company_Url - {{ content.company_url }} - <input v-modal="company_url">
+    Company_Url - {{ content.company_url }} - <input v-model="company_url">
     <br>
-    Cover - {{ content.cover }} - <input v-modal="cover">
+    Cover - {{ content.cover }} - <input v-model="cover">
     <br>
     Description - {{content.description}} - <input v-model="description">
     <br>
@@ -23,7 +23,7 @@
     <br>
     Inn - {{ content.inn }} - <input v-model="inn">
     <br>
-    Address - {{content.legal_address}} - <input v-modal="legal_address">
+    Address - {{content.legal_address}} - <input v-model="legal_address">
     <br>
     Logo - {{content.logo}} - <input v-model="logo">
     <br>
@@ -89,8 +89,7 @@ export default {
         "manufacture_address": this.manufacture_address,
         "import_substitution_shield": true
       })
-
-      console.log(response)
+      console.log(response + "test2")
     }
   }
 }
