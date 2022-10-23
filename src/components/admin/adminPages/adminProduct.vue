@@ -33,26 +33,26 @@
 <script>
 import AdminSearch from "@/components/admin/adminComponent/adminSearch";
 import ModalWindow from "@/components/admin/ModalWindow/modalWindow";
+import axios from "axios";
 export default {
   name: "adminProduct",
   components: {ModalWindow, AdminSearch},
   data() {
     return{
       dialogVisible: false,
-      products: [
-        {
-          id: 1, productType: '', productManufacture: '', productBrend: '', productName: 'Ростсельмаш', productePrice: '', productCategorie: 'Сельхоз-техника', productShield: '', productStatus: 'Принято' , productDate: '12.10.2022'
-        },
-        {
-          id: 2, productType: '', productManufacture: '', productBrend: '', productName: 'Ростсельмаш', productePrice: '', productCategorie: 'Сельхоз-техника', productShield: '', productStatus: 'Принято' , productDate: '12.10.2022'
-        },
-      ]
+      products: []
     }
   },
   methods: {
     showDialog() {
       this.dialogVisible = true
     }
+  },
+  async mounted() {
+    const response = await axios.get(process.env.VUE_APP_BASEAPI_URL + "/admin/product/get")
+
+    this.products = response.data
+
   }
 
 }

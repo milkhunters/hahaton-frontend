@@ -48,121 +48,11 @@ export default {
       idItem: 0,
       url: process.env.VUE_APP_BASEAPI_URL,
       newExhibitors:[],
-      exhibitors: [
-        {
-          id: 1,
-          exName: 'Ростсельмаш',
-          ExInn: '123456789123',
-          exFIO: 'Петров Петр',
-          exCategorie: 'Сельхоз-техника',
-          exStatus: 'Принято',
-          exDate: '20.10.2022',
-          exManufacture: 'Да'
-        }
-      ],
-      exhibitors2: [
-        {
-          "id": 1,
-          "import_substitution_shield": 'no',
-          "category_id": 'IT',
-          "legal_address": 'alim',
-          "logo": 'alim',
-          "about": 'alim',
-          "cover": 'alim',
-          "description": 'alim',
-          "company_url": 'alim',
-          "manufacture_address": 'alim',
-          "catalog_id": 'alim',
-          "inn": "3664069397",
-          "title": "ООО Супер Компания",
-          "phone_number": 'alim'
-        },
-        {
-          "id": 2,
-          "import_substitution_shield": 'yes',
-          "category_id": 'Sport',
-          "legal_address": 'alim',
-          "logo": 'alim',
-          "about": 'alim',
-          "cover": 'alim',
-          "description": 'alim',
-          "company_url": 'alim',
-          "manufacture_address": 'alim',
-          "catalog_id": 'alim',
-          "inn": "3664069397",
-          "title": "ООО Супер Компания",
-          "phone_number": 'alim'
-        },
-        {
-          "id": 4,
-          "import_substitution_shield": false,
-          "category_id": null,
-          "legal_address": null,
-          "logo": null,
-          "about": null,
-          "cover": null,
-          "description": null,
-          "company_url": null,
-          "manufacture_address": null,
-          "catalog_id": null,
-          "inn": "36640693r97",
-          "title": "ООО Супер Пупер Компания",
-          "phone_number": null
-        },
-        {
-          "id": 5,
-          "import_substitution_shield": false,
-          "category_id": null,
-          "legal_address": null,
-          "logo": null,
-          "about": null,
-          "description": null,
-          "company_url": null,
-          "manufacture_address": null,
-          "catalog_id": null,
-          "inn": "366406397",
-          "title": "ООО Супер Мега Компания",
-          "phone_number": null
-        },
-        {
-          "id": 6,
-          "import_substitution_shield": false,
-          "category_id": null,
-          "legal_address": null,
-          "logo": null,
-          "about": null,
-          "cover": null,
-          "description": null,
-          "company_url": null,
-          "manufacture_address": null,
-          "catalog_id": null,
-          "inn": "123456789123",
-          "title": "ООО РогаКопыта",
-          "phone_number": null
-        },
-        {
-          "id": 7,
-          "import_substitution_shield": false,
-          "category_id": null,
-          "legal_address": null,
-          "logo": null,
-          "about": null,
-          "cover": null,
-          "description": null,
-          "company_url": null,
-          "manufacture_address": null,
-          "catalog_id": null,
-          "inn": "1337420228",
-          "title": "JobGames",
-          "phone_number": null
-        }    //   "cover": null,
 
-      ]
     }
   },
   methods: {
     showDialog(id) {
-      console.log(id)
       this.dialogVisible = true
       this.idItem = id
     },
@@ -171,7 +61,7 @@ export default {
   },
   async mounted() {
     const response = await axios.get(process.env.VUE_APP_BASEAPI_URL + "/admin/company/get")
-    // this.newExhibitors = response.data
+
     this.newExhibitors = response.data
 
   }
