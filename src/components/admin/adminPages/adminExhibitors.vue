@@ -172,7 +172,8 @@ export default {
   mounted() {
     const response = axios.get(process.env.VUE_APP_BASEAPI_URL + "/admin/company/get")
     // this.newExhibitors = response.data
-    this.newExhibitors = response
+    // this.newExhibitors = response
+    console.log(response)
   }
 }
 </script>
