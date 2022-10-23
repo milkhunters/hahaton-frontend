@@ -62,7 +62,7 @@ export default {
   async mounted() {
     const response = await axios.get(process.env.VUE_APP_BASEAPI_URL + "/user/get")
 
-    this.newExhibitors = response.data[]
+    this.newExhibitors = response.data
 
     console.log(this.newExhibitors)
     console.log(response)
