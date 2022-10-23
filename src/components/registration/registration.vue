@@ -21,6 +21,8 @@
           </div>-->
           <p>Логин</p>
           <input type="text" name="login" required/>
+          <p>ФИО</p>
+          <input type="text" name="full_name" required/>
           <p>E-mail</p>
           <input type="email" name="email" value="" required/>
           <p>Название организации</p>
