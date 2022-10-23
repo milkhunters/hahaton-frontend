@@ -1,6 +1,7 @@
 <template>
 
 <div class="homeDiv">
+
   <AuthRegButtons/>
 
 </div>
@@ -21,5 +22,11 @@ export default {
 </script>
 
 <style scoped>
-
+  .homeDiv {
+    height: 100%;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
