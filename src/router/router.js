@@ -76,6 +76,21 @@ const routes = [
         name: 'lk',
         component: () => import('@/components/lk/lk')
     },
+    {
+        path: '/contacts',
+        name: 'contacts',
+        component: () => import('@/components/home/ContactPage.vue')
+    },
+    {
+        path: '/about',
+        name: 'about',
+        component: () => import('@/components/home/AboutPage.vue')
+    },
+    {
+        path: '/how-to',
+        name: 'how-to',
+        component: () => import('@/components/home/HowtoPage.vue')
+    }
 
   ]
 
