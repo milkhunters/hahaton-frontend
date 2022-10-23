@@ -82,6 +82,7 @@ a {
   padding: 1px;
   margin-bottom: 20px;
   height: 40px;
+  background: #fff;
   display: flex;
   width: 300px;
   justify-content: center;
@@ -107,6 +108,7 @@ a {
   background: var(--content-color-hover);
 }
 .reg_data_name {
+  opacity: 0;
   font-size: 17px;
   position: absolute;
   right: 40px;
