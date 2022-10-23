@@ -17,7 +17,7 @@
     </tr>
 
 
-    <tr class="record" @click="showDialog(item.id)" v-for="item in exhibitors2"  :key="item.id">
+    <tr class="record" @click="showDialog(item.id)" v-for="item in newExhibitors"  :key="item.id">
       <th>{{ item.id }}</th>
       <th>{{ item.title }}</th>
       <th>{{ item.inn }}</th>
@@ -38,6 +38,7 @@
 <script>
 import AdminSearch from "@/components/admin/adminComponent/adminSearch";
 import ModalWindow from "@/components/admin/ModalWindow/modalWindow";
+import axios from "axios";
 export default {
   name: "ExhibitorsApp",
   components: {ModalWindow, AdminSearch},
@@ -45,6 +46,8 @@ export default {
     return {
       dialogVisible: false,
       idItem: 0,
+      url: process.env.VUE_APP_BASEAPI_URL,
+      newExhibitors:[],
       exhibitors: [
         {
           id: 1,
@@ -162,8 +165,15 @@ export default {
       console.log(id)
       this.dialogVisible = true
       this.idItem = id
-    }
+    },
 
+
+  },
+  async mounted() {
+    const response = await axios.get(process.env.VUE_APP_BASEAPI_URL + "/admin/company/get")
+    // this.newExhibitors = response.data
+    // this.newExhibitors = response
+    console.log(response)
   }
 }
 </script>
