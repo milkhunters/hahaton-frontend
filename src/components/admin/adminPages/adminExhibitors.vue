@@ -172,8 +172,8 @@ export default {
   async mounted() {
     const response = await axios.get(process.env.VUE_APP_BASEAPI_URL + "/admin/company/get")
     // this.newExhibitors = response.data
-    // this.newExhibitors = response
-    console.log(response)
+    this.newExhibitors = response.data
+
   }
 }
 </script>
