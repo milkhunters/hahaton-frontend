@@ -17,7 +17,7 @@
     </tr>
 
 
-    <tr class="record" @click="showDialog(item.id)" v-for="item in newExhibitors"  :key="item.id">
+    <tr class="record" @click="showDialog(item)" v-for="item in newExhibitors"  :key="item.id">
       <th>{{ item.id }}</th>
       <th>{{ item.title }}</th>
       <th>{{ item.inn }}</th>

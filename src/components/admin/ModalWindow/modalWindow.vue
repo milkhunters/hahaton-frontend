@@ -4,8 +4,35 @@
 
 <div @click.stop class="dialog__content">
   <slot>
-
-   id {{ content }}
+    ID - {{ content.id }}
+    <br>
+   {{content.about  }}
+    <br>
+    {{ content.company_url }}
+    <br>
+    {{ content.cover }}
+    <br>
+   {{ content.create_time }}
+    <br>
+    {{content.description}}
+    <br>
+    {{content.exhibitor}}
+    <br>
+    {{ content.import_substitution_shield }}
+    <br>
+    {{ content.inn }}
+    <br>
+    {{content.legal_address}}
+    <br>
+    {{content.logo}}
+    <br>
+    {{content.manufacture_address}}
+    <br>
+    {{content.phone_number}}
+    <br>
+    {{content.title}}
+    <br>
+    {{content.update_time}}
 <!--    <tr class="record" v-for="item in content" :key="item.id">-->
 <!--      <th>{{ item.id }}</th>-->
 <!--      <th>{{ item.title }}</th>-->
