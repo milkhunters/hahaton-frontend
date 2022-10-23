@@ -11,24 +11,27 @@
         </div>
 
         <h1 class="reg_data_title">Регистрация</h1>
-        <form id="login" method="POST">
+        {{ this.errorMessage }}
+        <form @submit.prevent="signUp" id="login" method="POST">
           <!-- Ответ ajax -->
           <span id="loginmessage"></span>
           <!-- Ответ ajax -->
-          <div class="reg_data_img_banner">
+<!--          <div class="reg_data_img_banner">
             <img id="placeholder1" width=300/><br/>
             <input id="file" type="file" accept="image/*" />
-          </div>
+          </div>-->
           <p>Логин</p>
-          <input type="text" name="login" required/>
+          <input type="text" v-model="username" name="login" required/>
+          <p>ФИО</p>
+          <input type="text" v-model="full_name" name="full_name" required/>
           <p>E-mail</p>
-          <input type="email" name="email" value="" required/>
+          <input type="email" v-model="email" name="email" required/>
           <p>Название организации</p>
-          <input type="text" name="organisation" required/>
+          <input type="text" v-model="company_name" name="organisation" required/>
           <p>ИНН</p>
-          <input type="text" name="inn" required/>
+          <input type="text" v-model="inn" name="inn" required/>
           <p class="log-pass">Пароль</p>
-          <input type="password" name="password" value="" required/><br />
+          <input type="password" v-model="password" name="password" required/><br />
           <input type="hidden" name="do_login" />
           <button type="submit" name="do_login">Зарегистрироваться</button>
         </form>
@@ -39,10 +42,46 @@
 </template>
 
 <script>
-
+import router from "@/router/router";
+import axios from "axios";
 
 export default {
-  name: "Registration-App"
+  name: "Registration-App",
+  data() {
+    return{
+      username: "",
+      password: "",
+      email: "",
+      full_name: "",
+      company_name: "",
+      inn: "",
+      errorMessage: "",
+      url: process.env.VUE_APP_BASEAPI_URL
+    }
+  },
+  methods: {
+    async signUp(){
+      const url = process.env.VUE_APP_BASEAPI_URL
+
+      const response = await axios.post(url + "/auth/signUp", {
+        "username": this.username,
+        "password": this.password,
+        "email": this.email,
+        "full_name": this.full_name,
+        "company_name": this.company_name,
+        "inn": this.inn
+      })
+
+      if (response.status === 200 && response.data === null) {
+        await router.push({name: 'registration-success'})
+        this.errorMessage = "Успех! Ожидайте оповещения на почту"
+        console.log("good")
+      } else if (response.data.error !== undefined) {
+        this.errorMessage = response.data.error.message
+      }
+
+    }
+  },
 }
 </script>
 

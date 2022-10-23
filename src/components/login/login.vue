@@ -53,14 +53,15 @@ export default {
         "username": this.username,
         "password": this.password
       })
-      console.log(response)
+      // console.log(response)
 
       if (response.status === 200 && response.data.error === undefined)
       {
-        console.log('name ' + this.username)
+
         // localStorage.setItem('isAuth', 'true')
         // localStorage.setItem('user', JSON.stringify(response.data))
         // document.cookie = "user" + "=" + JSON.stringify(response.data);
+        console.log('name ' + this.username)
 
         if (response.data.role_id >= 20)
         {

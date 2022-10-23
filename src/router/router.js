@@ -18,8 +18,12 @@ const routes = [
     {
         path: '/registration',
         name: 'registration',
-        component: () => import('@/components/registration/registration')
-
+        component: () => import('@/components/registration/registration'),
+    },
+    {
+        path: '/registration-success',
+        name: 'registration-success',
+        component: () => import('@/components/registration/registration-success.vue')
     },
     {
         path: '/admin',
@@ -69,6 +73,21 @@ const routes = [
         name: 'lk',
         component: () => import('@/components/lk/lk')
     },
+    {
+        path: '/contacts',
+        name: 'contacts',
+        component: () => import('@/components/home/ContactPage.vue')
+    },
+    {
+        path: '/about',
+        name: 'about',
+        component: () => import('@/components/home/AboutPage.vue')
+    },
+    {
+        path: '/how-to',
+        name: 'how-to',
+        component: () => import('@/components/home/HowtoPage.vue')
+    }
 
   ]
 
