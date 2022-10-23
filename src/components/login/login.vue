@@ -57,7 +57,7 @@ export default {
 
       if (response.status === 200 && response.data.error === undefined)
       {
-        console.log('name ' + this.username)
+
         // localStorage.setItem('isAuth', 'true')
         // localStorage.setItem('user', JSON.stringify(response.data))
         // document.cookie = "user" + "=" + JSON.stringify(response.data);
