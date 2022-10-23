@@ -11,7 +11,7 @@ import router from "@/router/router";
 export default {
   name: "LkApp",
   async mounted() {
-    const response = axios.post(process.env.VUE_APP_BASEAPI_URL + '/user/current')
+    const response = axios.get(process.env.VUE_APP_BASEAPI_URL + '/user/current')
 
     if (response.status !== 200 || response.data.error !== undefined) {
       await axios.post(process.env.VUE_APP_BASEAPI_URL + "/auth/logout", {})

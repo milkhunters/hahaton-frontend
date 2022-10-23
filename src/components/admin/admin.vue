@@ -24,7 +24,7 @@ export default {
   name: "AdminApp",
   components: { adminNavbar, adminForm},
   async mounted() {
-    const response = axios.post(process.env.VUE_APP_BASEAPI_URL + '/user/current')
+    const response = axios.get(process.env.VUE_APP_BASEAPI_URL + '/user/current')
 
     if (response.data.role_id < 20 || response.status !== 200 || response.data.error !== undefined) {
       await router.push({name: 'lk'})
