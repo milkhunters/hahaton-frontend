@@ -29,7 +29,7 @@
     </tr>
 
 
-    <modal-window v-model:show="dialogVisible" :content = "idItem"></modal-window>
+    <modal-window v-model:show="dialogVisible" v-model:content = "Item"></modal-window>
 
   </table>
 </div>
@@ -45,16 +45,17 @@ export default {
   data() {
     return {
       dialogVisible: false,
-      idItem: 0,
+      Item: 0,
       url: process.env.VUE_APP_BASEAPI_URL,
       newExhibitors:[],
 
     }
   },
   methods: {
-    showDialog(id) {
+    showDialog(item) {
       this.dialogVisible = true
-      this.idItem = id
+      this.Item = item
+      console.log("test 3")
     }
 
   },
@@ -62,8 +63,9 @@ export default {
     const response = await axios.get(process.env.VUE_APP_BASEAPI_URL + "/admin/company/get")
 
     this.newExhibitors = response.data
-    console.log(response)
-    console.log(response.company_url)
+
+    console.log("test 1")
+
 
   }
 }

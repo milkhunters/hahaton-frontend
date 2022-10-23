@@ -13,9 +13,9 @@
     <br>
    About - {{content.about  }} - <input v-model="about">
     <br>
-    Company_Url - {{ content.company_url }} - <input v-modal="company_url">
+    Company_Url - {{ content.company_url }} - <input v-model="company_url">
     <br>
-    Cover - {{ content.cover }} - <input v-modal="cover">
+    Cover - {{ content.cover }} - <input v-model="cover">
     <br>
     Description - {{content.description}} - <input v-model="description">
     <br>
@@ -23,7 +23,7 @@
     <br>
     Inn - {{ content.inn }} - <input v-model="inn">
     <br>
-    Address - {{content.legal_address}} - <input v-modal="legal_address">
+    Address - {{content.legal_address}} - <input v-model="legal_address">
     <br>
     Logo - {{content.logo}} - <input v-model="logo">
     <br>
@@ -49,6 +49,7 @@ export default {
   data() {
     return{
       // names: [{id:1, v:'ID', d: 'id'}, {id:2,v:'About', d:''}, {id:3,v:'Company_Url', d:''}, {id:4,v:'Cover', d:''}, {id:5,v:'Create_Time', d:''}, {id:6,v:'Description', d:''}, {id:7,v:'Exhibitor', d:''}, {id:8,v:'Import', d:''}, {id:9,v:'Inn', d:''}, {id:10,v:'Address', d:''}, {id:11,v:'Logo', d:''}, {id:12,v:'Manufacture', d:''}, {id:13,v:'PhoneNumber', d:''}, {id:14,v:'Title', d:''}, {id:15, v:'UpdateTime', d:''}],
+
       title: "",
       description: "",
       about: "",
@@ -76,7 +77,7 @@ export default {
       this.$emit('update:show', false)
     },
     async updateForm() {
-      const response = await axios.post('https://dev-hack.milkhunters.ru/api/v1/admin/company/update',{
+      const response = await axios.post('https://dev-hack.milkhunters.ru/api/v1/admin/company/update?company_id=' + this.content.id,{
         "title": this.title,
         "description": this.description,
         "about": this.about,
@@ -89,8 +90,7 @@ export default {
         "manufacture_address": this.manufacture_address,
         "import_substitution_shield": true
       })
-
-      console.log(response)
+      console.log(response + "test2")
     }
   }
 }
