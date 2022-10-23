@@ -17,7 +17,7 @@
     </tr>
 
 
-    <tr class="record" @click="showDialog(item.id)" v-for="item in exhibitors2"  :key="item.id">
+    <tr class="record" @click="showDialog(item.id)" v-for="item in newExhibitors"  :key="item.id">
       <th>{{ item.id }}</th>
       <th>{{ item.title }}</th>
       <th>{{ item.inn }}</th>
@@ -172,7 +172,7 @@ export default {
   mounted() {
     const response = axios.get(process.env.VUE_APP_BASEAPI_URL + "/admin/company/get")
     // this.newExhibitors = response.data
-    console.log(response)
+    this.newExhibitors = response
   }
 }
 </script>
