@@ -6,7 +6,7 @@
   <slot>
 
     <div v-for="name in names" :key="name.id">
-      {{ name.v }} - {{ content[name.id - 1] }} - hi
+      {{ name.v }} - {{ content.name.d }}
     </div>
 
 <!--      ID - {{ content.id }}-->
@@ -61,7 +61,7 @@ export default {
   name: "modalWindow",
   data() {
     return{
-      names: [{id:1, v:'ID'}, {id:2,v:'About'}, {id:3,v:'Company_Url'}, {id:4,v:'Cover'}, {id:5,v:'Create_Time'}, {id:6,v:'Description'}, {id:7,v:'Exhibitor'}, {id:8,v:'Import'}, {id:9,v:'Inn'}, {id:10,v:'Address'}, {id:11,v:'Logo'}, {id:12,v:'Manufacture'}, {id:13,v:'PhoneNumber'}, {id:14,v:'Title'}, {id:15, v:'UpdateTime'}],
+      names: [{id:1, v:'ID', d: 'id'}, {id:2,v:'About', d:''}, {id:3,v:'Company_Url', d:''}, {id:4,v:'Cover', d:''}, {id:5,v:'Create_Time', d:''}, {id:6,v:'Description', d:''}, {id:7,v:'Exhibitor', d:''}, {id:8,v:'Import', d:''}, {id:9,v:'Inn', d:''}, {id:10,v:'Address', d:''}, {id:11,v:'Logo', d:''}, {id:12,v:'Manufacture', d:''}, {id:13,v:'PhoneNumber', d:''}, {id:14,v:'Title', d:''}, {id:15, v:'UpdateTime', d:''}],
     }
   },
   props: {
