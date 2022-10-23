@@ -20,17 +20,17 @@
             <input id="file" type="file" accept="image/*" />
           </div>-->
           <p>Логин</p>
-          <input type="text" name="login" required/>
+          <input type="text" v-model="username" name="login" required/>
           <p>ФИО</p>
-          <input type="text" name="full_name" required/>
+          <input type="text" v-model="full_name" name="full_name" required/>
           <p>E-mail</p>
-          <input type="email" name="email" value="" required/>
+          <input type="email" v-model="email" name="email" required/>
           <p>Название организации</p>
-          <input type="text" name="organisation" required/>
+          <input type="text" v-model="company_name" name="organisation" required/>
           <p>ИНН</p>
-          <input type="text" name="inn" required/>
+          <input type="text" v-model="inn" name="inn" required/>
           <p class="log-pass">Пароль</p>
-          <input type="password" name="password" value="" required/><br />
+          <input type="password" v-model="password" name="password" required/><br />
           <input type="hidden" name="do_login" />
           <button type="submit" name="do_login">Зарегистрироваться</button>
         </form>
@@ -62,7 +62,7 @@ export default {
     async signUp(){
       const url = process.env.VUE_APP_BASEAPI_URL
 
-      const response = await axios.post(url + "/auth/signIn", {
+      const response = await axios.post(url + "/auth/signUp", {
         "username": this.username,
         "password": this.password,
         "email": this.email,
