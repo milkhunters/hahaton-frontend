@@ -72,7 +72,7 @@ export default {
         "inn": this.inn
       })
 
-      if (response.status === 200 && response.data.error === undefined) {
+      if (response.status === 200 && response.data === null) {
         await router.push({name: 'registration-success'})
         this.errorMessage = "Успех! Ожидайте оповещения на почту"
         console.log("good")
