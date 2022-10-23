@@ -38,16 +38,8 @@
     Title - {{content.title}}
     <br>
     UpdateTiem - {{content.update_time}}
-    <tr class="record" v-for="item in content" :key="item.id">
-      <th>{{ item.id }}</th>
-      <th>{{ item.title }}</th>
-      <th>{{ item.inn }}</th>
-      <th>ФИО</th>
-      <th>Категория</th>
-      <th>Статус заявки</th>
-      <th>Дата</th>
-      <th>{{ item.import_substitution_shield }}</th>
-    </tr>
+
+
 
   </slot>
 </div>
@@ -61,7 +53,7 @@ export default {
   name: "modalWindow",
   data() {
     return{
-      names: [{id:1, v:'ID', d: 'id'}, {id:2,v:'About', d:''}, {id:3,v:'Company_Url', d:''}, {id:4,v:'Cover', d:''}, {id:5,v:'Create_Time', d:''}, {id:6,v:'Description', d:''}, {id:7,v:'Exhibitor', d:''}, {id:8,v:'Import', d:''}, {id:9,v:'Inn', d:''}, {id:10,v:'Address', d:''}, {id:11,v:'Logo', d:''}, {id:12,v:'Manufacture', d:''}, {id:13,v:'PhoneNumber', d:''}, {id:14,v:'Title', d:''}, {id:15, v:'UpdateTime', d:''}],
+      // names: [{id:1, v:'ID', d: 'id'}, {id:2,v:'About', d:''}, {id:3,v:'Company_Url', d:''}, {id:4,v:'Cover', d:''}, {id:5,v:'Create_Time', d:''}, {id:6,v:'Description', d:''}, {id:7,v:'Exhibitor', d:''}, {id:8,v:'Import', d:''}, {id:9,v:'Inn', d:''}, {id:10,v:'Address', d:''}, {id:11,v:'Logo', d:''}, {id:12,v:'Manufacture', d:''}, {id:13,v:'PhoneNumber', d:''}, {id:14,v:'Title', d:''}, {id:15, v:'UpdateTime', d:''}],
     }
   },
   props: {
