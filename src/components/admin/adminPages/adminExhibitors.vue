@@ -19,8 +19,8 @@
 
     <tr class="record" @click="showDialog(item)" v-for="item in newExhibitors"  :key="item.id">
       <th>{{ item.company.id }}</th>
-      <th>{{ item.company.title }}</th>
-      <th>{{ item.company.inn }}</th>
+      <th>{{ item.compantitle }}</th>
+      <th>{{ item.inn }}</th>
       <th>ФИО</th>
       <th>Категория</th>
       <th>Статус заявки</th>
@@ -53,20 +53,18 @@ export default {
   },
   methods: {
     showDialog(item) {
+
       this.dialogVisible = true
       this.Item = item
-      console.log("test 3")
+
     }
 
   },
   async mounted() {
+
     const response = await axios.get(process.env.VUE_APP_BASEAPI_URL + "/user/get")
 
     this.newExhibitors = response.data
-
-    console.log(this.newExhibitors)
-    console.log(response)
-
 
   }
 }

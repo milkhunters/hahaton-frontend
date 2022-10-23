@@ -8,32 +8,46 @@
 <!--    <div v-for="name in names" :key="name.id">-->
 <!--      {{ name.v }} - {{ content.name.d }}-->
 <!--    </div>-->
+    <div class="dialog_wrapper">
+      <div class="dialog_item">
+        <p>ID</p><p>{{ content.id }}</p>
+      </div>
+      <div class="dialog_item">
+        <p>About</p><p>{{ content.about }}<input v-model="about"></p>
+      </div>
+      <div class="dialog_item">
+        <p>Company Url</p><p>{{ content.company_url }}<input v-model="company_url"></p>
+      </div>
+      <div class="dialog_item">
+        <p>Cover</p><p>{{ content.cover }}<input v-model="cover"></p>
+      </div>
+      <div class="dialog_item">
+        <p>Description</p><p>{{ content.description }}<input v-model="description"></p>
+      </div>
+      <div class="dialog_item">
+        <p>Import</p><p>{{ content.import_substitution_shield }}<input v-model="import_substitution_shield"></p>
+      </div>
+      <div class="dialog_item">
+        <p>Inn</p><p>{{ content.inn }}<input v-model="inn"></p>
+      </div>
+      <div class="dialog_item">
+        <p>Address</p><p>{{ content.legal_address }}<input v-model="legal_address"></p>
+      </div>
+      <div class="dialog_item">
+        <p>Logo</p><p>{{ content.logo }}<input v-model="logo"></p>
+      </div>
+      <div class="dialog_item">
+        <p>Manufacture</p><p>{{ content.manufacture_address }}<input v-model="manufacture_address"></p>
+      </div>
+      <div class="dialog_item">
+        <p>Phone Number</p><p>{{ content.phone_number }}<input v-model="phone_number"></p>
+      </div>
+      <div class="dialog_item">
+        <p>Title</p><p>{{ content.title }}<input v-model="title"></p>
+      </div>
+    </div>
 
-    ID - {{ content.id }} -
-    <br>
-   About - {{content.about  }} - <input v-model="about">
-    <br>
-    Company_Url - {{ content.company_url }} - <input v-model="company_url">
-    <br>
-    Cover - {{ content.cover }} - <input v-model="cover">
-    <br>
-    Description - {{content.description}} - <input v-model="description">
-    <br>
-    Imoprt - {{ content.import_substitution_shield }} - <input v-model="import_substitution_shield">
-    <br>
-    Inn - {{ content.inn }} - <input v-model="inn">
-    <br>
-    Address - {{content.legal_address}} - <input v-model="legal_address">
-    <br>
-    Logo - {{content.logo}} - <input v-model="logo">
-    <br>
-    Manufacture - {{content.manufacture_address}} - <input v-model="manufacture_address">
-    <br>
-    Phone Number - {{content.phone_number}} - <input v-model="phone_number">
-    <br>
-    Title - {{content.title}} - <input v-model="title">
-
-    <button @click="updateForm">Ок</button>
+    <button @click="updateForm" class="dialog_btn_confirm">Подтвердить</button>
   </slot>
 </div>
 
