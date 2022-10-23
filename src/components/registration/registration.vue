@@ -11,6 +11,7 @@
         </div>
 
         <h1 class="reg_data_title">Регистрация</h1>
+        {{ this.errorMessage }}
         <form @submit.prevent="signUp" id="login" method="POST">
           <!-- Ответ ajax -->
           <span id="loginmessage"></span>
