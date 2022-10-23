@@ -56,7 +56,23 @@ export default {
       this.dialogVisible = true
       this.idItem = id
     },
+    async updateForm() {
+      const response = await axios.post('https://dev-hack.milkhunters.ru/api/v1/admin/company/get',{
+        "title": this.title,
+        "description": this.description,
+        "about": this.about,
+        "logo": this.logo,
+        "cover": this.cover,
+        "company_url": this.company_url,
+        "phone_number": this.phone_number,
+        "inn": this.inn,
+        "legal_address": this.legal_address,
+        "manufacture_address": this.manufacture_address,
+        "import_substitution_shield": true
+      })
+      this.newExhibitors  = response.data
 
+    }
 
   },
   async mounted() {

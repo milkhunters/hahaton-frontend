@@ -53,7 +53,7 @@ export default {
         "username": this.username,
         "password": this.password
       })
-      console.log(response)
+      // console.log(response)
 
       if (response.status === 200 && response.data.error === undefined)
       {

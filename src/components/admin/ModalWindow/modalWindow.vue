@@ -9,38 +9,31 @@
 <!--      {{ name.v }} - {{ content.name.d }}-->
 <!--    </div>-->
 
-      ID - {{ content.id }}
+    ID - {{ content.id }} -
     <br>
-   About - {{content.about  }}
+   About - {{content.about  }} - <input v-model="about">
     <br>
-    Company_Url - {{ content.company_url }}
+    Company_Url - {{ content.company_url }} - <input v-modal="company_url">
     <br>
-    Cover - {{ content.cover }}
+    Cover - {{ content.cover }} - <input v-modal="cover">
     <br>
-   Create-Time - {{ content.create_time }}
+    Description - {{content.description}} - <input v-model="description">
     <br>
-    Description - {{content.description}}
+    Imoprt - {{ content.import_substitution_shield }} - <input v-model="import_substitution_shield">
     <br>
-    Exhibitor - {{content.exhibitor}}
+    Inn - {{ content.inn }} - <input v-model="inn">
     <br>
-    Imoprt - {{ content.import_substitution_shield }}
+    Address - {{content.legal_address}} - <input v-modal="legal_address">
     <br>
-    Inn - {{ content.inn }}
+    Logo - {{content.logo}} - <input v-model="logo">
     <br>
-    Address - {{content.legal_address}}
+    Manufacture - {{content.manufacture_address}} - <input v-model="manufacture_address">
     <br>
-    Logo - {{content.logo}}
+    Phone Number - {{content.phone_number}} - <input v-model="phone_number">
     <br>
-    Manufacture - {{content.manufacture_address}}
-    <br>
-    Phone Number - {{content.phone_number}}
-    <br>
-    Title - {{content.title}}
-    <br>
-    UpdateTiem - {{content.update_time}}
+    Title - {{content.title}} - <input v-model="title">
 
-
-
+    <button @click="updateForm">Ок</button>
   </slot>
 </div>
 
@@ -49,11 +42,24 @@
 </template>
 
 <script>
+// import axios from "axios";
+
 export default {
   name: "modalWindow",
   data() {
     return{
       // names: [{id:1, v:'ID', d: 'id'}, {id:2,v:'About', d:''}, {id:3,v:'Company_Url', d:''}, {id:4,v:'Cover', d:''}, {id:5,v:'Create_Time', d:''}, {id:6,v:'Description', d:''}, {id:7,v:'Exhibitor', d:''}, {id:8,v:'Import', d:''}, {id:9,v:'Inn', d:''}, {id:10,v:'Address', d:''}, {id:11,v:'Logo', d:''}, {id:12,v:'Manufacture', d:''}, {id:13,v:'PhoneNumber', d:''}, {id:14,v:'Title', d:''}, {id:15, v:'UpdateTime', d:''}],
+      title: "",
+      description: "",
+      about: "",
+      logo: "",
+      cover: "",
+      company_url: "",
+      phone_number: "",
+      inn: "",
+      legal_address: "",
+      manufacture_address: "",
+      import_substitution_shield: true
     }
   },
   props: {
@@ -68,7 +74,22 @@ export default {
   methods: {
     hideDialog() {
       this.$emit('update:show', false)
-    }
+    },
+    // async updateForm() {
+    //   const response = await axios.post('https://dev-hack.milkhunters.ru/api/v1/admin/company/get',{
+    //     "title": this.title,
+    //     "description": this.description,
+    //     "about": this.about,
+    //     "logo": this.logo,
+    //     "cover": this.cover,
+    //     "company_url": this.company_url,
+    //     "phone_number": this.phone_number,
+    //     "inn": this.inn,
+    //     "legal_address": this.legal_address,
+    //     "manufacture_address": this.manufacture_address,
+    //     "import_substitution_shield": true
+    //   })
+    // }
   }
 }
 </script>
