@@ -1,94 +1,94 @@
 <template>
-<div class="homeDiv">
-<!--  <AuthRegButtons/>-->
-  <div class="header_mobile">
-    <a href="#" class="header_mobile_item">Промышленное машиностроение и металлообработка <i class="fa-light fa-arrow-right"></i></a>
-    <a href="#" class="header_mobile_item">Энергетическое
-      машино- и станкостроение <i class="fa-light fa-arrow-right"></i></a>
-    <a href="#" class="header_mobile_item">Химическая промышленность <i class="fa-light fa-arrow-right"></i></a>
-    <a href="#" class="header_mobile_item">Агропромышленный комплекс <i class="fa-light fa-arrow-right"></i></a>
-    <a href="#" class="header_mobile_item">Легкая
-      промышленность <i class="fa-light fa-arrow-right"></i></a>
-    <a href="#" class="header_mobile_item">IT-индустрия <i class="fa-light fa-arrow-right"></i></a>
-    <div class="header_mobile_line"></div>
-    <div class="header_mobile_item_page_cover">
-      <div class="header_mobile_item_page_wrapper">
-        <a href="#" class="header_mobile_item_page">Как стать участником</a>
-        <a href="#" class="header_mobile_item_page">Контакты</a>
-        <a href="#" class="header_mobile_item_page">О нас</a>
-        <a href="#" class="header_mobile_item_page">Вход</a>
-      </div>
-    </div>
-    <svg
-        class="ham hamRotate ham4 navToggle ham_mobile"
-        viewBox="0 0 110 100"
-        width="70"
-    >
-      <path
-          class="line top"
-          d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
-      />
-      <path class="line middle" d="m 70,50 h -40" />
-      <path
-          class="line bottom"
-          d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
-      />
-    </svg>
-  </div>
-  <div class="search_header_cover">
-    <div class="search">
-      <div class="search-container">
-        <span class="icon"><i class="far fa-search"></i></span>
-        <input type="search" id="search" placeholder="Поиск..." />
-      </div>
-    </div>
-  </div>
-  <header class="header">
-    <div class="container">
-      <div class="header_left" data-aos="fade-down" data-aos-duration="800" data-aos-delay="4000">
-        <AuthRegButtons/>
-        <div class="header_search_cover">
-          <i class="fa-light fa-magnifying-glass"></i>
+  <div class="homeDiv">
+    <!--  <AuthRegButtons/>-->
+    <div class="header_mobile">
+      <a href="#" class="header_mobile_item">Промышленное машиностроение и металлообработка <i class="fa-light fa-arrow-right"></i></a>
+      <a href="#" class="header_mobile_item">Энергетическое
+        машино- и станкостроение <i class="fa-light fa-arrow-right"></i></a>
+      <a href="#" class="header_mobile_item">Химическая промышленность <i class="fa-light fa-arrow-right"></i></a>
+      <a href="#" class="header_mobile_item">Агропромышленный комплекс <i class="fa-light fa-arrow-right"></i></a>
+      <a href="#" class="header_mobile_item">Легкая
+        промышленность <i class="fa-light fa-arrow-right"></i></a>
+      <a href="#" class="header_mobile_item">IT-индустрия <i class="fa-light fa-arrow-right"></i></a>
+      <div class="header_mobile_line"></div>
+      <div class="header_mobile_item_page_cover">
+        <div class="header_mobile_item_page_wrapper">
+          <a href="#" class="header_mobile_item_page">Как стать участником</a>
+          <a href="#" class="header_mobile_item_page">Контакты</a>
+          <a href="#" class="header_mobile_item_page">О нас</a>
+          <a href="#" class="header_mobile_item_page">Вход</a>
         </div>
       </div>
-      <div class="header_logo" data-aos="fade-down" data-aos-duration="800" data-aos-delay="2000">
-        <img src="@/components/img/logo.png" alt="logo" class="header_logo_img">
-      </div>
-      <div class="header_right">
-        <a href="#" class="header_right_join" data-aos="fade-down" data-aos-duration="800" data-aos-delay="2000">присоединиться</a>
+      <svg
+          class="ham hamRotate ham4 navToggle ham_mobile"
+          viewBox="0 0 110 100"
+          width="70"
+      >
+        <path
+            class="line top"
+            d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
+        />
+        <path class="line middle" d="m 70,50 h -40" />
+        <path
+            class="line bottom"
+            d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
+        />
+      </svg>
+    </div>
+    <div class="search_header_cover">
+      <div class="search">
+        <div class="search-container">
+          <span class="icon"><i class="far fa-search"></i></span>
+          <input type="search" id="search" placeholder="Поиск..." />
+        </div>
       </div>
     </div>
-  </header>
-  <section class="main_main">
-    <h1 class="main_swiper_title">Знай наших</h1>
-    <div class="swiper">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">
-          <img src="@/components/img/background.png" alt="ростсельмаш" class="main_swiper_img">
-          <div class="container">
-            <a href="#" class="main_swiper_img_link">
-              <img src="@/components/img/rost-logo.png" alt="ростсельмаш" class="main_swiper_img_company">
-            </a>
+    <header class="header">
+      <div class="container">
+        <div class="header_left" data-aos="fade-down" data-aos-duration="800" data-aos-delay="4000">
+          <AuthRegButtons/>
+          <div class="header_search_cover">
+            <i class="fa-light fa-magnifying-glass"></i>
+          </div>
+        </div>
+        <div class="header_logo" data-aos="fade-down" data-aos-duration="800" data-aos-delay="2000">
+          <img src="@/components/img/logo.png" alt="logo" class="header_logo_img">
+        </div>
+        <div class="header_right">
+          <a href="#" class="header_right_join" data-aos="fade-down" data-aos-duration="800" data-aos-delay="2000">присоединиться</a>
+        </div>
+      </div>
+    </header>
+    <section class="main_main">
+      <h1 class="main_swiper_title">Знай наших</h1>
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="@/components/img/background.png" alt="ростсельмаш" class="main_swiper_img">
+            <div class="container">
+              <a href="#" class="main_swiper_img_link">
+                <img src="@/components/img/rost-logo.png" alt="ростсельмаш" class="main_swiper_img_company">
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="main_category">
-      <a href="#" class="main_category_item">Промышленное машиностроение
-        и металлообработка
-      </a>
-      <a href="#" class="main_category_item">Энергетическое
-        машино- и станкостроение</a>
-      <a href="#" class="main_category_item">Химическая промышленность</a>
-      <a href="#" class="main_category_item">Агропромышленный комплекс</a>
-      <a href="#" class="main_category_item">Легкая
-        промышленность</a>
-      <a href="#" class="main_category_item">IT-индустрия</a>
-    </div>
-  </section>
-</div>
+      <div class="main_category">
+        <a href="#" class="main_category_item">Промышленное машиностроение
+          и металлообработка
+        </a>
+        <a href="#" class="main_category_item">Энергетическое
+          машино- и станкостроение</a>
+        <a href="#" class="main_category_item">Химическая промышленность</a>
+        <a href="#" class="main_category_item">Агропромышленный комплекс</a>
+        <a href="#" class="main_category_item">Легкая
+          промышленность</a>
+        <a href="#" class="main_category_item">IT-индустрия</a>
+      </div>
+    </section>
+  </div>
 
 </template>
 
