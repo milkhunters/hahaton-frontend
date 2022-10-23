@@ -19,14 +19,11 @@ const routes = [
         path: '/registration',
         name: 'registration',
         component: () => import('@/components/registration/registration'),
-        children: [
-            {
-                path: 'success',
-                name: 'registration-success',
-                component: () => import('@/components/registration/registration-success.vue')
-            }
-        ]
-
+    },
+    {
+        path: '/registration-success',
+        name: 'registration-success',
+        component: () => import('@/components/registration/registration-success.vue')
     },
     {
         path: '/admin',

@@ -11,6 +11,7 @@
         </div>
 
         <h1 class="reg_data_title">Регистрация</h1>
+        {{ this.errorMessage }}
         <form @submit.prevent="signUp" id="login" method="POST">
           <!-- Ответ ajax -->
           <span id="loginmessage"></span>
@@ -71,9 +72,10 @@ export default {
         "inn": this.inn
       })
 
-
-      if (response.status === 200 && response.data.error === undefined) {
+      if (response.status === 200 && response.data === null) {
         await router.push({name: 'registration-success'})
+        this.errorMessage = "Успех! Ожидайте оповещения на почту"
+        console.log("good")
       } else if (response.data.error !== undefined) {
         this.errorMessage = response.data.error.message
       }

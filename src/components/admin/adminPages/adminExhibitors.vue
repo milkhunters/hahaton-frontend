@@ -18,18 +18,18 @@
 
 
     <tr class="record" @click="showDialog(item)" v-for="item in newExhibitors"  :key="item.id">
-      <th>{{ item.id }}</th>
-      <th>{{ item.title }}</th>
-      <th>{{ item.inn }}</th>
+      <th>{{ item.company.id }}</th>
+      <th>{{ item.company.title }}</th>
+      <th>{{ item.company.inn }}</th>
       <th>ФИО</th>
       <th>Категория</th>
       <th>Статус заявки</th>
       <th>Дата</th>
-      <th>{{ item.import_substitution_shield }}</th>
+      <th>{{ item.company.import_substitution_shield }}</th>
     </tr>
 
 
-    <modal-window v-model:show="dialogVisible" :content = "idItem"></modal-window>
+    <modal-window v-model:show="dialogVisible" v-model:content = "Item"></modal-window>
 
   </table>
 </div>
@@ -45,42 +45,28 @@ export default {
   data() {
     return {
       dialogVisible: false,
-      idItem: 0,
+      Item: 0,
       url: process.env.VUE_APP_BASEAPI_URL,
       newExhibitors:[],
 
     }
   },
   methods: {
-    showDialog(id) {
+    showDialog(item) {
       this.dialogVisible = true
-      this.idItem = id
-    },
-    async updateForm() {
-      const response = await axios.post('https://dev-hack.milkhunters.ru/api/v1/admin/company/get',{
-        "title": this.title,
-        "description": this.description,
-        "about": this.about,
-        "logo": this.logo,
-        "cover": this.cover,
-        "company_url": this.company_url,
-        "phone_number": this.phone_number,
-        "inn": this.inn,
-        "legal_address": this.legal_address,
-        "manufacture_address": this.manufacture_address,
-        "import_substitution_shield": true
-      })
-      this.newExhibitors  = response.data
-
+      this.Item = item
+      console.log("test 3")
     }
 
   },
   async mounted() {
-    const response = await axios.get(process.env.VUE_APP_BASEAPI_URL + "/admin/company/get")
+    const response = await axios.get(process.env.VUE_APP_BASEAPI_URL + "/user/get")
 
     this.newExhibitors = response.data
+
+    console.log(this.newExhibitors)
     console.log(response)
-    console.log(response.company_url)
+
 
   }
 }
