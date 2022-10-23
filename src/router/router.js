@@ -7,7 +7,7 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: () => import('@/components/home/HomePage'),
+        component: () => import('@/components/home/home'),
         // redirect: { name: 'login' }
     },
     {
