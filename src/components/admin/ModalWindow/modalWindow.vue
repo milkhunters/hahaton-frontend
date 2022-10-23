@@ -4,35 +4,40 @@
 
 <div @click.stop class="dialog__content">
   <slot>
-    ID - {{ content.id }}
-    <br>
-   About - {{content.about  }}
-    <br>
-    Company_Url - {{ content.company_url }}
-    <br>
-    Cover - {{ content.cover }}
-    <br>
-   Create-Time - {{ content.create_time }}
-    <br>
-    Description - {{content.description}}
-    <br>
-    Exhibitor - {{content.exhibitor}}
-    <br>
-    Imoprt - {{ content.import_substitution_shield }}
-    <br>
-    Inn - {{ content.inn }}
-    <br>
-    Address - {{content.legal_address}}
-    <br>
-    Logo - {{content.logo}}
-    <br>
-    Manufacture - {{content.manufacture_address}}
-    <br>
-    Phone Number - {{content.phone_number}}
-    <br>
-    Title - {{content.title}}
-    <br>
-    UpdateTiem - {{content.update_time}}
+
+    <div v-for="name in names" :key="name.id">
+      {{ name.v }} - {{ content[name.id - 1] }} - hi
+    </div>
+
+<!--      ID - {{ content.id }}-->
+<!--    <br>-->
+<!--   About - {{content.about  }}-->
+<!--    <br>-->
+<!--    Company_Url - {{ content.company_url }}-->
+<!--    <br>-->
+<!--    Cover - {{ content.cover }}-->
+<!--    <br>-->
+<!--   Create-Time - {{ content.create_time }}-->
+<!--    <br>-->
+<!--    Description - {{content.description}}-->
+<!--    <br>-->
+<!--    Exhibitor - {{content.exhibitor}}-->
+<!--    <br>-->
+<!--    Imoprt - {{ content.import_substitution_shield }}-->
+<!--    <br>-->
+<!--    Inn - {{ content.inn }}-->
+<!--    <br>-->
+<!--    Address - {{content.legal_address}}-->
+<!--    <br>-->
+<!--    Logo - {{content.logo}}-->
+<!--    <br>-->
+<!--    Manufacture - {{content.manufacture_address}}-->
+<!--    <br>-->
+<!--    Phone Number - {{content.phone_number}}-->
+<!--    <br>-->
+<!--    Title - {{content.title}}-->
+<!--    <br>-->
+<!--    UpdateTiem - {{content.update_time}}-->
 <!--    <tr class="record" v-for="item in content" :key="item.id">-->
 <!--      <th>{{ item.id }}</th>-->
 <!--      <th>{{ item.title }}</th>-->
@@ -54,6 +59,11 @@
 <script>
 export default {
   name: "modalWindow",
+  data() {
+    return{
+      names: [{id:1, v:'ID'}, {id:2,v:'About'}, {id:3,v:'Company_Url'}, {id:4,v:'Cover'}, {id:5,v:'Create_Time'}, {id:6,v:'Description'}, {id:7,v:'Exhibitor'}, {id:8,v:'Import'}, {id:9,v:'Inn'}, {id:10,v:'Address'}, {id:11,v:'Logo'}, {id:12,v:'Manufacture'}, {id:13,v:'PhoneNumber'}, {id:14,v:'Title'}, {id:15, v:'UpdateTime'}],
+    }
+  },
   props: {
     show: {
       type: Boolean,
